@@ -1,0 +1,143 @@
+% =====================================================================
+% Plastic and Reconstructive Surgery (PRS): Original Article WORKING SHELL
+% Unofficial manuscript class, NOT the journal's production template.
+% Build: pdflatex main; biber main; pdflatex main; pdflatex main
+% Toggle [draftfigures] below for placeholders; remove for submission.
+% Original Articles: structured abstract <=250 words, body <=3000 words.
+% Figure pieces + tables combined: <=20 (verify current article category).
+% =====================================================================
+% Submission: use [submission] or [submission,draftfigures]
+% Visual approximation of a published paper: use [journalpreview,draftfigures]
+% \documentclass[submission,draftfigures]{prsmanuscript}
+\documentclass[journalpreview,draftfigures]{prsmanuscript}
+\usepackage[backend=biber,style=numeric-comp,sorting=none,
+  maxbibnames=6,minbibnames=3,giveninits=true,
+  doi=true,isbn=false,url=false]{biblatex}
+\addbibresource{references.bib}
+% Superscript numbers after punctuation, e.g. a sentence.\supercite{key}
+% AMA-like numeric reference list; verify punctuation/journal abbreviations
+% against the journal's current examples before final submission.
+\DeclareFieldFormat{labelnumberwidth}{#1\adddot}
+\DeclareFieldFormat[article]{title}{#1}
+\DeclareFieldFormat{journaltitle}{\mkbibemph{#1}}
+\renewbibmacro{in:}{}
+
+% ----- Manuscript metadata -----
+\PRStitle{Placeholder Title: A Prospective Evaluation of a Reconstructive Technique}
+\PRSshorttitle{Evaluation of a Reconstructive Technique}
+\PRSauthors{First A. Author, MD\textsuperscript{1}; Second B. Author, MSc\textsuperscript{2}; Third C. Author, MD\textsuperscript{1}}
+\PRSaffiliations{\textsuperscript{1}Department of Plastic Surgery, Example Institution, City, State/Province, Country\\
+\textsuperscript{2}Department of Biomedical Engineering, Example University, City, State/Province, Country}
+\PRScorrespondence{First A. Author, Department, Institution, mailing address; email@example.org}
+\PRSwordcounts{[insert actual count]}{[insert actual count]}
+\PRSmetadata{\noindent\textbf{Article category:} Original Article\par
+\noindent\textbf{Prior presentation:} [Meeting, location, date; or None]\par
+\noindent\textbf{Funding:} [Funding source and grant; or None]\par
+\noindent\textbf{Conflicts of interest:} [Disclosures; or None]\par}
+
+\begin{document}
+\PRSmaketitle
+
+% For an Experimental Article, also add a 1--2 sentence Clinical Relevance
+% Statement at the END of the abstract and in the submission field.
+\begin{PRSabstract}
+\abstractpart{Background}{[Two or three sentences describing the problem, evidence gap, and objective.]}
+\abstractpart{Methods}{[Study design, setting, participants/samples, intervention or technique, primary outcome, and analysis.]}
+\abstractpart{Results}{[Sample size; effect size; uncertainty interval; key comparison and numerical findings. Do not invent results.]}
+\abstractpart{Conclusions}{[A concise, evidence-supported answer to the study objective.]}
+\PRSkeywords{reconstructive surgical procedures; surgical techniques; outcome assessment; [add appropriate MeSH terms]}
+\end{PRSabstract}
+\PRSstartbody % Enables two-column body ONLY in journalpreview mode.
+
+\section{Introduction}
+[Introduce the clinical problem and the current standard of care. Then describe the relevant knowledge gap.]
+A representative numbered citation appears at the end of this sentence.\supercite{exampletrial}
+A second publication can be cited with a combined citation.\supercite{exampletrial,examplereview}
+
+[End with a specific study objective and, where relevant, a prespecified hypothesis.]
+
+\section{Methods}
+\subsection{Study Design and Ethics}
+[Design, institution/setting, dates, institutional review board approval or exemption, informed consent, registration (when relevant).]
+
+\subsection{Participants and Procedures}
+[Inclusion and exclusion criteria, recruitment, intervention or device details, comparator, and reproducibility information.]
+Use \emph{italic text} for emphasized terminology, \textbf{bold} sparingly, and an explanatory footnote when necessary.\footnote{Footnotes should be used sparingly; essential methods belong in the main text.}
+
+\subsection{Outcome Measures and Statistical Analysis}
+[Define primary and secondary outcomes, sample size rationale, statistical tests, multiplicity handling, missing data, and software.]
+An inline equation can be written as $\Delta = y_{\mathrm{post}}-y_{\mathrm{pre}}$.
+An optional displayed equation is
+\begin{equation}
+ \bar{x}=\frac{1}{n}\sum_{i=1}^{n}x_i .\label{eq:mean}
+\end{equation}
+Equation~\eqref{eq:mean} illustrates automatic equation referencing.
+
+\section{Results}
+\subsection{Study Population}
+[Include screened/enrolled/analyzed counts and baseline characteristics.]
+Refer to Table~\ref{tab:baseline} in numerical order.
+
+\subsection{Primary and Secondary Outcomes}
+[Present estimates with measures of precision, denominators, and clinically meaningful interpretation.]
+Figure~\ref{fig:overview} is a draft placeholder; the actual figure file must be uploaded separately.
+\begin{figure}[tbp]\centering
+\PRSfigureplaceholder{1}{Example workflow or outcome chart}
+\caption{Placeholder caption for drafting; final legend is collected after the references.}\label{fig:overview}
+\end{figure}
+% Optional *drafting-only* embedded figure (replace the placeholder above):
+% \begin{figure}[htbp]\centering
+% \includegraphics[width=.8\linewidth]{figures/figure1.pdf}
+% \caption{Draft caption for internal review only.}\label{fig:alt}
+% \end{figure}
+
+\section{Discussion}
+[State principal findings, situate results among existing studies, explain clinical significance, and discuss plausible explanations.]
+
+\subsection{Limitations}
+[Discuss bias, statistical uncertainty, external validity, measurement issues, and generalizability.]
+
+\subsection{Conclusions}
+[Close with a short conclusion without introducing new results.]
+
+% ----- Statements: replace rather than retaining untrue stock declarations -----
+\section*{Acknowledgments and Declarations}
+\PRSdisclosure{Acknowledgments}{[Non-author contributions, if any.]}
+\PRSdisclosure{Funding}{[Grant and sponsor roles; or no external funding.]}
+\PRSdisclosure{Disclosure}{[Relevant financial/nonfinancial interests for all authors; or none.]}
+\PRSdisclosure{Ethics approval and consent}{[IRB name/approval number, consent arrangements, or legitimate exemption.]}
+\PRSdisclosure{Data availability}{[Availability and privacy/access restrictions, if applicable.]}
+\PRSdisclosure{Author contributions}{[Contributions; verify all named authors meet authorship criteria.]}
+
+\clearpage
+\printbibliography[title={References},heading=bibintoc]
+
+% PRS figure legends: text only; images separately uploaded.
+\clearpage
+\section*{Figure Legends}
+\PRSfigurelegend{1}{[Description of schematic, imaging modality and view, labels/panels (A, B, etc.), abbreviation definitions, and permissions if adapted.]}
+
+% Tables on separate page(s), not embedded in body; no vertical rules.
+\clearpage
+\section*{Tables}
+\PRStable{tab:baseline}{Example baseline characteristics (replace values with actual data)}
+\begin{threeparttable}
+\begin{tabularx}{\linewidth}{@{}Xcc@{}}
+\toprule
+Characteristic & Group A ($n=\cdots$) & Group B ($n=\cdots$) \\
+\midrule
+Sample size, $n$ & [n] & [n] \\
+Age, mean (SD), years & [value] & [value] \\
+Outcome, median (IQR) & [value] & [value] \\
+\bottomrule
+\end{tabularx}
+\begin{tablenotes}[flushleft]\footnotesize
+\item Abbreviations: IQR, interquartile range; SD, standard deviation.
+\item Values shown are placeholders; use appropriate summary statistics for the data.
+\end{tablenotes}
+\end{threeparttable}
+
+% SDC may be cited in text as Supplemental Digital Content 1; upload separately.
+% Cover letter, disclosures, consent/permissions and high-resolution figure
+% files generally need separate editorial-system submission.
+\end{document}
