@@ -14,6 +14,9 @@
   maxbibnames=6,minbibnames=3,giveninits=true,
   doi=true,isbn=false,url=false]{biblatex}
 \addbibresource{references.bib}
+% Draft-only red headings; remove subsection divisions for submission.
+\newcommand{\WIPsection}[1]{\section{\texorpdfstring{\textcolor{red}{#1 (WIP)}}{#1 (WIP)}}}
+\newcommand{\WIPsubsection}[1]{\subsection{\texorpdfstring{\textcolor{red}{#1 (WIP)}}{#1 (WIP)}}}
 % Superscript numbers after punctuation, e.g. a sentence.\supercite{key}
 % AMA-like numeric reference list; verify punctuation/journal abbreviations
 % against the journal's current examples before final submission.
@@ -25,10 +28,9 @@
 % ----- Manuscript metadata -----
 \PRStitle{Miniature Wristed Instruments for Transoral Robotic Simulated Cleft Palate Repair in a Live Porcine Model}
 \PRSshorttitle{Miniature Instruments for Porcine Palate Repair}
-\PRSauthors{First A. Author, MD\textsuperscript{1}; Second B. Author, MSc\textsuperscript{2}; Third C. Author, MD\textsuperscript{1}}
-\PRSaffiliations{\textsuperscript{1}Department of Plastic Surgery, Example Institution, City, State/Province, Country\\
-\textsuperscript{2}Department of Biomedical Engineering, Example University, City, State/Province, Country}
-\PRScorrespondence{First A. Author, Department, Institution, mailing address; email@example.org}
+\PRSauthors{\textbf{[Author names, degrees, and affiliation markers]}}
+\PRSaffiliations{\textbf{[Departments, institutions, cities, and countries]}}
+\PRScorrespondence{\textbf{[Corresponding author, mailing address, and email]}}
 \PRSwordcounts{\textbf{[insert actual count]}}{\textbf{[insert actual count]}}
 \PRSmetadata{\noindent\textbf{Article category:} Ideas \& Innovations\par
 \noindent\textbf{Prior presentation:} \textbf{[Meeting, location, date; or None]}\par
@@ -61,6 +63,6 @@
 \PRSfigurelegend{3}{\textbf{[Comparable endoscopic views with instrument masks and image-area obstruction measurements.]}}
 \PRSfigurelegend{4}{\textbf{[Repair completion, closure quality, and per-repair summaries of suture duration; add effort or force only if validated.]}}
 
-% No outcome table is populated until trial-level data are available.
+% Whole-recording occlusion results are tabulated in sections/occlusion.tex.
 % Upload figure files and Supplemental Digital Content separately.
 \end{document}

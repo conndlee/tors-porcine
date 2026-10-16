@@ -28,6 +28,8 @@
 \ifprs@preview
   \geometry{margin=.72in,columnsep=.26in}
   \setstretch{1.02}
+  % Allow long drafting placeholders and references to wrap in narrow columns.
+  \setlength{\emergencystretch}{2em}
   \setlength{\parindent}{1em}
   \setlength{\parskip}{0pt}
   \captionsetup{font=footnotesize,labelfont=bf,labelsep=period}

@@ -40,8 +40,8 @@ Limitations to address include porcine versus infant anatomy, simulated rather t
 ## Manuscript organization and build
 
 - [main.tex](main.tex): manuscript metadata, inclusion of the draft, declarations, bibliography, and figure legend placeholders.
-- [sections/draft.tex](sections/draft.tex): unstructured summary, concise presentation with integrated background, and discussion. Bold bracketed text identifies missing protocol details or results; no findings are invented.
-- [references.bib](references.bib): bibliographic record verified from the supplied PDF; dummy examples removed.
+- [sections/draft.tex](sections/draft.tex): unstructured summary, concise presentation with integrated background, and discussion. Bold bracketed fields identify missing protocol details or results within manuscript prose; no findings are invented. Fill completion counts as completed/attempted repairs and report comparative values with units and uncertainty.
+- [references.bib](references.bib): supplied paper plus primary studies on simulator validation, robotic simulator feasibility, and wrist friction.
 - [prsmanuscript.cls](prsmanuscript.cls): unofficial drafting class. `journalpreview` is for internal preview; select `submission` for submission-style formatting.
 
 Build with a TeX installation containing the class dependencies and Biber:
@@ -51,6 +51,14 @@ pdflatex main
 biber main
 pdflatex main
 pdflatex main
+```
+
+For a local PDF preview with Tectonic and a compatible Biber on `PATH`, run `make preview` and open [main.pdf](main.pdf) in the editor. Tectonic downloads required TeX packages on its first run and runs the bibliography processor automatically. The generated `main.pdf`, LaTeX intermediates, and local `build/` and `out/` directories are ignored by Git so they stay out of the Overleaf sync. Manuscript sources, reference PDFs, and figure assets remain eligible for Git.
+
+The rendered preview includes the bibliography, red WIP headings, and bold placeholders. The temporary toolchain (Tectonic with Biber 2.17 for its bundled biblatex 3.17) used in this session is under `/tmp` and may disappear after a restart. While it exists, rebuild using:
+
+```sh
+PATH=/tmp/tors-biber:/tmp/tors-latex/bin:$PATH XDG_CACHE_HOME=/tmp/tors-tex-cache make preview
 ```
 
 Verify actual abstract and body word counts after completing the draft; title-page counts remain placeholders.
@@ -70,3 +78,23 @@ The manuscript should summarize the authors' experience and highlight the techni
 ## Details still needed
 
 Confirm animal characteristics, ethics protocol, simulated defect creation, platform and tool versions in both groups, allocation/order, training, anesthesia and perioperative management, camera/setup details, suture/needle specifications, intended repair steps, protocol-specified manual assistance, conversions, recording completeness, and available independent closure measurements. Add authorship, funding, disclosures, and permissions before submission.
+
+## Draft headings and source checks
+
+Red headings marked **WIP** identify unfinished sections. The subsection headings are drafting aids; remove them from the concise presentation for submission, as required by the repository guidelines. Bold bracketed fields identify missing details and numerical results.
+
+Sources traced from the supplied PDF and checked against primary-study records:
+
+- [Podolsky et al., 2017: simulator validation](https://pubmed.ncbi.nlm.nih.gov/28027241/) — background on the synthetic platform.
+- [Podolsky et al., 2017: robotic simulator feasibility](https://pubmed.ncbi.nlm.nih.gov/28121879/) — wrist articulation, visualization, and instrument-size constraints.
+- [Ho et al., 2024: wrist friction](https://theiccilab.com/2024/11/characterization-of-friction-within-a-novel-3-mm-wristed-robotic-instrument/) — pitch-dependent friction relevant to interpreting logged effort.
+
+Wu et al.'s 2020 instrument paper (DOI: 10.1109/TMRB.2020.2977737), cited in the supplied PDF, is an additional lead. Its primary full text was not accessible during this pass; no new claims were attributed to it.
+
+## Occlusion results
+
+[sections/occlusion.tex](sections/occlusion.tex) is included through the main draft and contains segmentation test performance and a whole-recording occlusion table for six videos (two 3 mm, four 8 mm). The source repository `/home/connor/tors-data-anal` was accessed read-only. Its `plans/visual_field.md` documents the measure; numerical results came from `results/occlusion/seg_test.csv` and `data/derived/occlusion/video/*.parquet`, checked against the segmentation and inference scripts.
+
+Small numerical snapshots are retained in [data/occlusion](data/occlusion): the test CSV, per-video summary CSV, and SHA-256 hashes of source outputs. No external repository is needed to compile the manuscript. Percentages in the table were computed from the parquet values before rounding. These are whole-recording descriptive results, not step-matched or suturing-only comparisons. The six recordings require reconciliation with the eight-animal study description. Camera distance varied; one tool-free test frame produced a false positive, and the segmentation test split was within recordings. No between-group significance or equivalence is asserted.
+
+The occlusion table adds an item to the four existing figure placeholders; reconcile the final selection with the four-item figure/table allowance. Recheck the main-text word limit when merging the completed results into the concise presentation.

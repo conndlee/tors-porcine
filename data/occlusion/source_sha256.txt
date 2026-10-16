@@ -1,0 +1,7 @@
+370d3bd8019ad69867971b6b620a1b6ddb605d864bddd1f44cef85a3a141acd7  data/derived/occlusion/video/pig_aug18-2026-08-18_10.10.14.parquet
+0acfe7455e82f3044e0dcceab04f8557107140a6beb65e440fb07c66ce23879e  data/derived/occlusion/video/pig_aug19-2026-08-19_12.09.17.parquet
+e1980c722319066372fc3c235e41ed732e0e2c53da23b15fe97b110e6781efab  data/derived/occlusion/video/pig_jun15-2026-06-15_10.14.18.parquet
+ed776c5fbe33904d73330ad0c77212b8b25da699710e7dc50ab36a7bd3f1d673  data/derived/occlusion/video/pig_jun16-2026-06-16_09.57.53.parquet
+1da309651ef6510637b9ab721556a23ae15880fa4b9da229357821975a57a28c  data/derived/occlusion/video/pig_oct07-2026-10-07_14.31.12.parquet
+4f5ea175734ec5f5ffd3388c65a5e76f57f7ba0f5f4877d1a87cee75928dda16  data/derived/occlusion/video/pig_oct08-2026-10-08_13.19.52.parquet
+4ec9d306a0d2101341f079a42edd308afe0c3b5cab20ea98b71bdc45217d8bbb  results/occlusion/seg_test.csv

@@ -1,0 +1,45 @@
+# Local manuscript preview; source PDFs and figure assets remain eligible for Git.
+/main.pdf
+
+# Generated LaTeX files (including builds of other manuscript entry points).
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.out
+*.run.xml
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.synctex(busy)
+*.fdb_latexmk
+*.fls
+*.xdv
+*.dvi
+*.nav
+*.snm
+*.vrb
+*.spl
+*.loa
+*.lol
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.idx
+*.ilg
+*.ind
+*.fmt
+*.tdo
+*.thm
+*.synctex.gz(busy)
+/texput.pdf
+
+# Local build output directories.
+/build/
+/out/
