@@ -4,11 +4,11 @@ LaTeX manuscript for a **Plastic and Reconstructive Surgery, Ideas & Innovations
 
 ## Study basis and prior work
 
-The completed study is described in [temp/premise.md](temp/premise.md). The procedures involved **one surgeon and eight pigs, four for each instrument size**. Confirm the number of repairs/trials per animal, allocation, trial order, and protocol details from the operative records to fill in the methods. The study has been completed; its numerical results and remaining procedural details have not yet been filled into the manuscript.
+The completed study is described in [temp/premise.md](temp/premise.md). The original premise described **one surgeon and eight pigs, four for each instrument size**. The current analysis contains seven main recordings (three 3 mm, four 8 mm) and a mixed-instrument May 28 pilot; reconcile these with the animal log. Confirm the number of repairs/trials per animal, allocation, trial order, and protocol details from the operative records to fill in the methods. The study has been completed. Occlusion and timing results are drafted; completion, closure quality, and remaining procedural details are still incomplete.
 
 The supplied [Maguire et al. paper](Robotic_Assisted_Cleft_Palate_Repair_Using_Novel_3_mm_Tools_A_Reachability_and_Collision_Analysis.pdf) provides the tool design and motivation (IEEE Transactions on Biomedical Engineering, 2025;72:2085–2094; DOI: 10.1109/TBME.2025.3534119). It evaluated reachability and collisions using simulation and a synthetic cleft palate model. This manuscript concerns live porcine simulated repair and operative performance. Published simulator results must remain attributed background, not outcomes of this study.
 
-The study assessed completion of the intended repair, immediate closure quality relative to 8 mm instruments, and operative differences associated with miniaturization. Outcome values remain **[to be filled from the completed study]**. Smaller instruments motivate eventual applications in restricted oral workspaces; a porcine study does not establish suitability or safety for infant clinical use.
+The study assessed completion of the intended repair, immediate closure quality relative to 8 mm instruments, and operative differences associated with miniaturization. The current figures show lower image obstruction with 3 mm instruments and longer annotated stitch durations. Smaller instruments motivate eventual applications in restricted oral workspaces; a porcine study does not establish suitability or safety for infant clinical use.
 
 ## Data and measurements
 
@@ -40,7 +40,7 @@ Limitations to address include porcine versus infant anatomy, simulated rather t
 ## Manuscript organization and build
 
 - [main.tex](main.tex): manuscript metadata, inclusion of the draft, declarations, bibliography, and figure legend placeholders.
-- [sections/draft.tex](sections/draft.tex): unstructured summary, concise presentation with integrated background, and discussion. Bold bracketed fields identify missing protocol details or results within manuscript prose; no findings are invented. Fill completion counts as completed/attempted repairs and report comparative values with units and uncertainty.
+- [sections/draft.tex](sections/draft.tex): brief summary, background, technique, evaluation, and discussion. It loads [occlusion.tex](sections/occlusion.tex) and [sutures.tex](sections/sutures.tex). Bold fields and bullets identify unfinished points.
 - [references.bib](references.bib): supplied paper plus primary studies on simulator validation, robotic simulator feasibility, and wrist friction.
 - [prsmanuscript.cls](prsmanuscript.cls): unofficial drafting class. `journalpreview` is for internal preview; select `submission` for submission-style formatting.
 
@@ -91,10 +91,23 @@ Sources traced from the supplied PDF and checked against primary-study records:
 
 Wu et al.'s 2020 instrument paper (DOI: 10.1109/TMRB.2020.2977737), cited in the supplied PDF, is an additional lead. Its primary full text was not accessible during this pass; no new claims were attributed to it.
 
-## Occlusion results
+## Current result figures and draft (2026-10-21)
 
-[sections/occlusion.tex](sections/occlusion.tex) is included through the main draft and contains segmentation test performance and a whole-recording occlusion table for six videos (two 3 mm, four 8 mm). The source repository `/home/connor/tors-data-anal` was accessed read-only. Its `plans/visual_field.md` documents the measure; numerical results came from `results/occlusion/seg_test.csv` and `data/derived/occlusion/video/*.parquet`, checked against the segmentation and inference scripts.
+The analysis repository `/home/connor/tors-data-anal` was read without modification. Its suture directory is `results/sutures/figures` (plural). The report `results/sutures/sutures.md` and occlusion figure captions were checked against CSV outputs and plotting scripts.
 
-Small numerical snapshots are retained in [data/occlusion](data/occlusion): the test CSV, per-video summary CSV, and SHA-256 hashes of source outputs. No external repository is needed to compile the manuscript. Percentages in the table were computed from the parquet values before rounding. These are whole-recording descriptive results, not step-matched or suturing-only comparisons. The six recordings require reconciliation with the eight-animal study description. Camera distance varied; one tool-free test frame produced a false positive, and the segmentation test split was within recordings. No between-group significance or equivalence is asserted.
+- **Occlusion:** The seven main recordings give a median of recording medians of 10.39% (3 mm) versus 23.93% (8 mm). After excluding occlusion below 1%, these become 10.71% versus 24.42%. The histogram pools filtered frames and gives 11.0% versus 25.1%; do not mix these summaries.
+- **Timing:** There are 61 annotated stitches (23 versus 38). The mean of per-pig mean stitch durations is 7.1 versus 4.2 minutes. Median procedure duration is 115.91 versus 75.46 minutes. These descriptive findings favor 8 mm instruments for speed.
+- **Figures in the draft:** One occlusion figure combines the distribution and two illustrative masked views. One timing figure shows per-pig stitch timelines and summaries. Together with two result tables, this uses four figure/table items, subject to the journal's panel-count rules.
+- **Additional candidate:** [figures/results/procedure.pdf](figures/results/procedure.pdf) shows dissection and repair-phase timelines. It can replace the stitch overview if the writing emphasizes the complete procedure. Individual-case timelines are better suited to supplemental material.
 
-The occlusion table adds an item to the four existing figure placeholders; reconcile the final selection with the four-item figure/table allowance. Recheck the main-text word limit when merging the completed results into the concise presentation.
+The results are included through `sections/draft.tex`, and copied assets in [figures/results](figures/results) make the Overleaf build independent of the analysis repository. Numerical snapshots are in [data/occlusion](data/occlusion) and [data/sutures](data/sutures). The dated [source hash manifest](data/analysis_sources_2026-10-21.sha256) identifies the reviewed files. The older `video_summary.csv` and `source_sha256.txt` retain the six-recording snapshot from October 16; they are not the current table source.
+
+### Editorial checks
+
+- Resolve animal identifiers, the mixed-instrument pilot, and the original four-per-group description.
+- Confirm mask quality on May 29, which was not part of the six-recording segmentation train/test set. The histogram excludes dark frames and occlusion below 1%; the unfiltered case summaries exclude only dark frames.
+- The selected 8 mm example is captioned at 30% occlusion, although its source-selection interval was 26–27%. The final full-resolution mask and per-second pipeline differ; retain the displayed-image value and document this distinction if needed.
+- Check May 29's final knot-to-cut interval (15.5 minutes), October 8's duplicate needle-through mark, and June 16's repeated soft-palate block (909% occupancy). Block occupancy is not reported in the manuscript.
+- The timing script assigns stitches by repair-region labels, not verified nasal/oral closure layers. Do not relabel those categories as tissue layers without reviewing annotations.
+- Camera position, task mix, unequal stitch counts, and learning limit causal comparisons. No significance or equivalence claims are made.
+- Keep segments short. Use full sentences or bullets. Red WIP subsection headings and editorial bullets are drafting aids and need consolidation for submission. Recheck the final 1,000-word limit after removing them.

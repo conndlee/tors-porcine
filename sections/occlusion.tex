@@ -1,30 +1,43 @@
-% Source: /home/connor/tors-data-anal/plans/visual_field.md and completed
-% segmentation/video outputs. Local numerical snapshots: data/occlusion/.
+% Current source snapshots: data/occlusion/summary_by_{system,segment}.csv.
 \WIPsubsection{Instrument Occlusion}
-Occlusion was defined as the image fraction occupied by instrument shafts, wrists, and jaws, excluding the retractor, teeth, needle, and suture. The left endoscopic view was cropped below the title bar and analysed at one frame per second. A DeepLabV3--ResNet-50 model was fitted using 120 labelled frames; 30 frames were held out within the same six recordings. Median test intersection-over-union was 0.921 for 3 mm instruments and 0.973 for 8 mm instruments. Median absolute image-area error was 0.33 and 0.20 percentage points, respectively. One tool-free test frame had a false-positive instrument area of 1.66\% and an intersection-over-union of zero.
+Instrument masks covered shafts, wrists, and jaws in the left endoscopic view. Occlusion was sampled at one frame per second. The main comparison included three 3 mm recordings and four 8 mm recordings; the mixed-instrument May 28 pilot was excluded.
 
-Whole-recording median occlusion ranged from 10.25\% to 11.31\% for 3 mm instruments and from 22.86\% to 26.50\% for 8 mm instruments (Table~\ref{tab:occlusion}). These descriptive values include all sampled video intervals; they are not suturing-specific estimates. Camera distance varied, and the test split did not assess generalization to unseen recordings. \textbf{[Task-matched occlusion results and camera-view assessment.]}
+The median of the recording medians was 10.39\% with 3 mm instruments and 23.93\% with 8 mm instruments (Table~\ref{tab:occlusion}). With occlusion below 1\% excluded, the corresponding values were 10.71\% and 24.42\%. The pooled-frame histogram used this latter filter and had medians of 11.0\% and 25.1\% (Fig.~\ref{fig:occlusion}). These summaries describe different denominators and are not suturing-only comparisons.
 
 \begin{table}[tbp]
 \centering
-\caption{Whole-recording instrument occlusion.}
+\caption{Occlusion summaries for the main recordings.}
 \label{tab:occlusion}
-\begin{threeparttable}
 \small
-\begin{tabular}{@{}lrrl@{}}
+\begin{tabularx}{\linewidth}{@{}Xrr@{}}
 \toprule
-Recording & Tool (mm) & Frames & Median (Q1--Q3), \% \\
+Measure & 3 mm & 8 mm \\
 \midrule
-June 15 & 3 & 7755 & 10.25 (7.08--12.18) \\
-June 16 & 3 & 9322 & 11.31 (7.92--14.06) \\
-August 18 & 8 & 5025 & 23.83 (15.96--31.00) \\
-August 19 & 8 & 5535 & 26.50 (19.32--31.08) \\
-October 7 & 8 & 7671 & 22.86 (15.61--29.48) \\
-October 8 & 8 & 4174 & 24.03 (19.93--27.75) \\
+Recordings, $n$ & 3 & 4 \\
+Frames in histogram, $n$ & 28,822 & 21,102 \\
+Median of recording medians, \% & 10.39 & 23.93 \\
+Range of recording medians, \% & 10.25--11.31 & 22.86--26.50 \\
+Median of filtered recording medians, \% & 10.71 & 24.42 \\
+Pooled filtered-frame median, \% & 11.0 & 25.1 \\
 \bottomrule
-\end{tabular}
-\begin{tablenotes}[flushleft]\footnotesize
-\item All recordings were from 2026. Q1 and Q3 denote the 25th and 75th percentiles. Frames are repeated observations, not independent repairs. Six available recordings were analysed; the study premise describes eight animals. \textbf{[Reconcile recording coverage with animal and repair identifiers.]}
-\end{tablenotes}
-\end{threeparttable}
+\end{tabularx}
+\par\smallskip
+\begin{minipage}{\linewidth}\footnotesize
+Dark frames were excluded. Filtered summaries additionally excluded occlusion below 1\%. Recordings, rather than frames, represent the case-level comparison. No significance test is reported.
+\end{minipage}
 \end{table}
+
+\begin{figure*}[tbp]
+\centering
+\includegraphics[width=.78\textwidth]{figures/results/occlusion_distribution.pdf}\par\smallskip
+\includegraphics[width=.23\textwidth]{figures/results/occlusion_example_3mm.png}\hspace{.04\textwidth}
+\includegraphics[width=.23\textwidth]{figures/results/occlusion_example_8mm.png}
+\caption{Instrument occlusion in the main recordings. Top: pooled frames with at least 1\% occlusion; dashed lines mark medians. The plotted axis ends at 60\%. Bottom: selected suturing examples with instrument masks, 3 mm on the left (11\% occlusion) and 8 mm on the right (30\%). These examples were selected by eye and were not matched for camera distance or task position.}
+\label{fig:occlusion}
+\end{figure*}
+
+\begin{itemize}
+\item Camera distance varied; lower image obstruction does not isolate instrument diameter from camera placement.
+\item The segmentation test used 30 held-out frames from the same six training-source recordings. Median intersection-over-union was 0.921 for 3 mm and 0.973 for 8 mm instruments. May 29 was outside those six recordings.
+\item \textbf{[Confirm May 29 mask quality and distinguish pooled-frame summaries from case-level estimates in the final interpretation.]}
+\end{itemize}
