@@ -60,11 +60,14 @@
 \def\prs@title{[Manuscript title]}\def\prs@authors{[Authors]}\def\prs@affiliations{[Affiliations]}
 \def\prs@correspondence{[Correspondence]}\def\prs@shorttitle{[Running title]}
 \def\prs@abstractcount{[verify]}\def\prs@bodycount{[verify]}\def\prs@metadata{}
+% In preview mode, title and abstract are emitted together by \PRSstartbody
+% as full-width material above the first page's two columns.
+\newcommand\prs@previewtitle{%
+ \begin{center}{\LARGE\bfseries\prs@title\par}\vspace{.75em}
+ {\normalsize\prs@authors\par}\end{center}\vspace{.6em}}
 \newcommand\PRSmaketitle{%
 \ifprs@preview
- \begin{center}{\LARGE\bfseries\prs@title\par}\vspace{.75em}
- {\normalsize\prs@authors\par}\vspace{.45em}
- {\small\itshape\prs@affiliations\par}\end{center}\vspace{.6em}
+ % Deferred until the abstract is available.
 \else
  \begin{titlepage}\thispagestyle{empty}\begin{center}
  {\large\bfseries\prs@title\par}\vspace{1.8em}
@@ -75,13 +78,31 @@
  \noindent\textbf{Main-text word count:} \prs@bodycount\par\medskip
  \prs@metadata\end{titlepage}\setcounter{page}{1}
 \fi}
-\newenvironment{PRSabstract}{%
-\ifprs@preview \par\noindent\textbf{Abstract}\par\smallskip\begingroup\small
-\else \clearpage\section*{Abstract}\begingroup\fi
-}{\par\endgroup\ifprs@preview\vspace{.7em}\else\clearpage\fi}
+\def\prs@abstractbody{}
+\NewDocumentEnvironment{PRSabstract}{+b}{%
+\ifprs@preview
+ \gdef\prs@abstractbody{#1}%
+\else
+ \clearpage\section*{Abstract}\begingroup #1\par\endgroup\clearpage
+\fi
+}{}
 \newcommand\abstractpart[2]{\par\noindent\textbf{#1:} #2\par}
 \newcommand\PRSkeywords[1]{\par\noindent\textbf{Keywords:} #1\par}
-\newcommand\PRSstartbody{\ifprs@preview\clearpage\twocolumn\fi}
+\newcommand\PRSstartbody{%
+\ifprs@preview
+ \twocolumn[{%
+  \prs@previewtitle
+  \par\noindent\textbf{Abstract}\par\smallskip
+  \begingroup\small\prs@abstractbody\par\endgroup\vspace{.7em}%
+ }]%
+ % An unnumbered footnote keeps the affiliation block at the bottom of the
+ % first column, with space reserved by LaTeX's normal page builder.
+ \begingroup
+  \renewcommand\thefootnote{}%
+  \renewcommand\@makefntext[1]{\noindent##1}%
+  \footnotetext{\prs@affiliations}%
+ \endgroup
+\fi}
 \newcommand\PRSdisclosure[2]{\par\noindent\textbf{#1:} #2\par}
 \newcommand\PRStable[2]{\par\refstepcounter{table}\label{#1}\noindent\textbf{Table \thetable.} #2\par\medskip}
 \newcommand\PRSfigurelegend[2]{\par\noindent\textbf{Fig. #1.} #2\par\medskip}

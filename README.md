@@ -39,6 +39,8 @@ Limitations to address include porcine versus infant anatomy, simulated rather t
 
 ## Manuscript organization and build
 
+Edit [authors.tex](authors.tex) for the author line, numbered affiliations, and corresponding-author details. The four supplied authors and affiliations are populated; online sources and user-supplied assignments are recorded in [AUTHOR_AFFILIATIONS.md](AUTHOR_AFFILIATIONS.md). Each is a multiline LaTeX block loaded by `main.tex`; add or remove author slots and match the superscript affiliation numbers. Correspondence appears on the title page in `submission` mode; `journalpreview` displays names below the title and affiliations at the bottom of the first column, with the two-column body beginning on the same page below the full-width abstract.
+
 - [main.tex](main.tex): manuscript metadata, inclusion of the draft, declarations, bibliography, and figure legend placeholders.
 - [sections/draft.tex](sections/draft.tex): brief summary, background, technique, evaluation, and discussion. It loads [occlusion.tex](sections/occlusion.tex) and [sutures.tex](sections/sutures.tex). Bold fields and bullets identify unfinished points.
 - [references.bib](references.bib): supplied paper plus primary studies on simulator validation, robotic simulator feasibility, and wrist friction.
