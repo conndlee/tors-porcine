@@ -1,0 +1,45 @@
+% Draft supplemental material; all tables are editable inputs in sections/tables/.
+\clearpage
+\onecolumn
+\WIPsection{Detailed Results: Draft Supplement}
+\WIPsubsection{Occlusion and Procedure Summaries}
+The tables retain the recording-level occlusion and timing summaries. Table~\ref{tab:suture-by-pig} preserves the numerical information from the removed stitch-overview figure as editable text.
+
+\input{sections/tables/occlusion_summary}
+\input{sections/tables/suture_summary}
+\input{sections/tables/suture_by_pig}
+
+\clearpage
+\WIPsubsection{Per-Suture Phase Timing}
+Each completed suture contributed a needle-passage interval, a knot-tying interval, and an assistant interval where retained. The figure shows all observations because the durations were skewed (Fig.~\ref{fig:suture-phases}). These pooled stitch-level medians differ from the means of per-pig means in the main timing summary.
+
+\input{sections/tables/suture_phase_times}
+
+\clearpage
+\WIPsubsection{Repair Regions and Stitch Components}
+Timing was separated into needle passage, knot tying, and the assistant interval. Table~\ref{tab:suture-regions} reports pooled stitch medians within annotated repair regions. Region labels were not assumed to identify nasal or oral closure layers.
+
+\input{sections/tables/suture_regions}
+
+\WIPsubsection{Knot Throws}
+Throws were counted from knot video clips. Figure~\ref{fig:knot-throws-mode} shows the throw counts and the mode version of the timing distribution. Both groups had a median of three throws per knot. The pooled median of the knot-tying interval per counted throw was 52.6 seconds with 3 mm instruments and 43.5 seconds with 8 mm instruments (Table~\ref{tab:knot-throws}).
+
+\input{sections/tables/knot_throws}
+
+\begin{itemize}
+\item The knot interval began at needle passage and included pulling suture through tissue. Dividing it by the throw count does not measure isolated throw execution time.
+\item First-of-block knots had longer median intervals per throw: 65 versus 48 seconds for later knots with 3 mm instruments, and 44 versus 41 seconds with 8 mm instruments. Thread length was not recorded.
+\end{itemize}
+
+\clearpage
+\WIPsubsection{Phase-Level Instrument Motion}
+Motion analysis included 19 stitches from two 3 mm pigs and 39 stitches from four 8 mm pigs. May 29 had no rosbag. Table~\ref{tab:phase-motion} separates needle passage from knot tying and reports both phase totals and duration-normalised values.
+
+\input{sections/tables/phase_motion}
+
+\begin{itemize}
+\item Signals were averaged into 0.05-second bins. Jaw closure meant closing below 0.1 rad after opening above 0.3 rad; this does not establish a successful tissue grasp.
+\item Both instruments were classified as still when each shaft end moved below 2 mm/s and wrist rotation below 0.1 rad/s.
+\item \textbf{[Confirm synchronization and kinematic assumptions before interpreting these motion estimates as efficiency.]}
+\item The analysis repository also contains preliminary insertion-effort estimates without a force sensor. These have not been presented as validated tissue force.
+\end{itemize}

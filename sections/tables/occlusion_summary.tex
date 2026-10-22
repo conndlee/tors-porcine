@@ -1,0 +1,23 @@
+% Editable table: update column specification, header, and row cells together.
+\begin{table}[htbp]
+\centering
+\caption{Occlusion summaries for the main recordings.}
+\label{tab:occlusion}
+\small
+\begin{tabularx}{\linewidth}{@{}Xrr@{}}
+\toprule
+Measure & 3 mm & 8 mm \\
+\midrule
+Recordings, $n$ & 3 & 4 \\
+Frames in density plot, $n$ & 28,822 & 21,102 \\
+Median of recording medians, \% & 10.39 & 23.93 \\
+Range of recording medians, \% & 10.25--11.31 & 22.86--26.50 \\
+Median of filtered recording medians, \% & 10.71 & 24.42 \\
+Pooled filtered-frame median, \% & 11.0 & 25.1 \\
+\bottomrule
+\end{tabularx}
+\par\smallskip
+\begin{minipage}{\linewidth}\footnotesize
+Dark frames were excluded. Filtered summaries additionally excluded occlusion below 1\%. Recordings, rather than frames, represent the case-level comparison. No significance test is reported.
+\end{minipage}
+\end{table}

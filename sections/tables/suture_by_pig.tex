@@ -1,0 +1,28 @@
+% Plain editable TeX. To add/remove a column, change the column specification,
+% header, every data row, and the notes below. No automatic CSV import is used.
+% Numerical check: data/sutures/by_pig_timing.csv, derived from stitches.csv.
+\begin{table}[htbp]
+\centering\small
+\caption{Per-pig suture timing retained from the stitch-overview figure.}
+\label{tab:suture-by-pig}
+\begin{tabularx}{\linewidth}{@{}Xlrrrr@{}}
+\toprule
+Recording & Tool & Stitches & Mean stitch (min) & Mean gap (min) & Suturing span (min) \\
+\midrule
+May 29 & 3 mm & 4 & 10.96 & 10.92 & 76.60 \\
+June 15 & 3 mm & 6 & 6.20 & 2.82 & 51.87 \\
+June 16 & 3 mm & 13 & 4.11 & 2.42 & 82.89 \\
+\textbf{Group mean} & 3 mm & \textbf{7.67} & \textbf{7.09} & \textbf{5.39} & \textbf{70.45} \\
+\midrule
+August 18 & 8 mm & 7 & 3.95 & 1.65 & 37.77 \\
+August 19 & 8 mm & 13 & 2.98 & 1.17 & 53.04 \\
+October 7 & 8 mm & 8 & 6.08 & 3.96 & 77.00 \\
+October 8 & 8 mm & 11 & 3.58 & 1.04 & 50.21 \\
+\textbf{Group mean} & 8 mm & \textbf{9.75} & \textbf{4.15} & \textbf{1.95} & \textbf{54.50} \\
+\bottomrule
+\end{tabularx}
+\par\smallskip
+\begin{minipage}{\linewidth}\footnotesize
+Stitch duration runs from first needle contact to knot tightening. Gap runs from knot tightening to the next stitch's start and includes phase transitions. Span runs from first needle contact to the last retained cut or knot endpoint. The May 29 final assistant interval is excluded. Bold rows are arithmetic means of the pig-level values; the stitch count in these rows is therefore a mean, not a total. Each pig contributes equally. All recordings are from 2026.
+\end{minipage}
+\end{table}
