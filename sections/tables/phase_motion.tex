@@ -1,27 +1,25 @@
-% Editable table: update column specification, header, and row cells together.
+% Editable one-column comparison; the companion table covers the other phase.
 \begin{table}[htbp]
 \centering\small
-\caption{Phase-level instrument motion. Values are pooled medians (25th--75th percentiles).}
+\caption{Needle passage instrument motion. Values are pooled medians (25th--75th percentiles).}
 \label{tab:phase-motion}
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.28\linewidth}*{4}{>{\raggedright\arraybackslash}X}@{}}
+\begin{tabularx}{\linewidth}{@{}*{3}{>{\raggedright\arraybackslash}X}@{}}
 \toprule
-Measure & Needle, 3 mm & Needle, 8 mm & Knot, 3 mm & Knot, 8 mm \\
+Measure & 3 mm & 8 mm \\
 \midrule
-Shaft-end path (mm) & 394.9 (264.8--1039.4) & 427.0 (269.3--720.6) & 1204.4 (1033.7--1556.6) & 1072.0 (905.7--1262.4) \\
-Roll (rad) & 20.5 (11.1--40.5) & 21.2 (14.7--35.1) & 35.7 (29.5--42.0) & 39.6 (33.7--46.9) \\
-Wrist pitch + yaw (rad) & 28.7 (17.8--75.7) & 30.0 (17.1--41.0) & 57.7 (47.4--73.7) & 54.1 (43.8--63.1) \\
-Jaw closures & 10.0 (6.5--21.5) & 14.0 (9.0--23.5) & 21.0 (16.0--25.5) & 23.0 (21.0--30.5) \\
-Both instruments still (s) & 16.4 (6.8--29.2) & 8.9 (4.9--17.1) & 11.6 (6.2--14.8) & 9.2 (7.1--13.3) \\
-Shaft-end path (mm/min) & 302.1 (283.8--340.6) & 359.3 (323.9--399.5) & 528.3 (468.8--649.6) & 522.9 (469.3--577.4) \\
-Roll (rad/min) & 12.5 (10.6--14.9) & 19.8 (16.8--22.1) & 15.4 (13.9--16.9) & 19.6 (15.7--20.6) \\
-Wrist pitch + yaw (rad/min) & 20.8 (18.5--23.9) & 22.9 (20.5--26.3) & 24.6 (23.1--26.9) & 25.4 (21.5--31.7) \\
-Jaw closures per minute & 7.4 (6.4--8.5) & 11.8 (9.4--13.8) & 9.3 (8.0--10.0) & 11.8 (10.4--13.2) \\
-Both instruments still (\%) & 14.3 (12.4--16.0) & 13.5 (10.2--15.8) & 7.1 (5.5--8.7) & 8.0 (6.1--9.9) \\
-Whole-phase workspace (cm$^3$) & 1.5 (1.0--2.4) & 2.1 (1.0--3.3) & 6.9 (3.6--10.4) & 5.9 (4.0--7.7) \\
-First-60-s workspace (cm$^3$) & 1.0 (0.6--1.3) [n=12] & 1.6 (1.1--2.2) [n=24] & 3.7 (2.1--5.8) [n=19] & 3.1 (2.2--3.9) [n=38] \\
-Spread about own centre (mm) & 4.4 (4.1--4.9) & 5.1 (4.6--6.0) & 6.6 (5.5--7.4) & 6.6 (6.1--7.1) \\
+Shaft-end path (mm) & 394.9 (264.8--1039.4) & 427.0 (269.3--720.6) \\
+Roll (rad) & 20.5 (11.1--40.5) & 21.2 (14.7--35.1) \\
+Wrist pitch + yaw (rad) & 28.7 (17.8--75.7) & 30.0 (17.1--41.0) \\
+Jaw closures & 10.0 (6.5--21.5) & 14.0 (9.0--23.5) \\
+Both instruments still (s) & 16.4 (6.8--29.2) & 8.9 (4.9--17.1) \\
+Shaft-end path (mm/min) & 302.1 (283.8--340.6) & 359.3 (323.9--399.5) \\
+Roll (rad/min) & 12.5 (10.6--14.9) & 19.8 (16.8--22.1) \\
+Wrist pitch + yaw (rad/min) & 20.8 (18.5--23.9) & 22.9 (20.5--26.3) \\
+Jaw closures per minute & 7.4 (6.4--8.5) & 11.8 (9.4--13.8) \\
+Both instruments still (\%) & 14.3 (12.4--16.0) & 13.5 (10.2--15.8) \\
+Whole-phase workspace (cm$^3$) & 1.5 (1.0--2.4) & 2.1 (1.0--3.3) \\
+First-60-s workspace (cm$^3$) & 1.0 (0.6--1.3) [n=12] & 1.6 (1.1--2.2) [n=24] \\
+Spread about own centre (mm) & 4.4 (4.1--4.9) & 5.1 (4.6--6.0) \\
 \bottomrule
 \end{tabularx}
-\par\smallskip\footnotesize
-Both instruments were summed for path length, rotations, and jaw closures. Workspace is the sum of separate shaft-end convex-hull volumes in instrument-relative frames, not a registered anatomical workspace or tool-tip volume. Spread is averaged across instruments. First-60-s volumes exclude phases shorter than 60 seconds; their counts are shown in brackets. All other columns contain 19 or 39 observations, respectively.
 \end{table}

@@ -1,0 +1,55 @@
+% Editable overview. Add study photographs at the paths below.
+% Keep each image's case ID, video timestamp and instrument group in its source notes.
+% Event wording is a draft: the quantitative analysis currently starts at tissue contact.
+\begin{figure*}[t]
+\centering
+\begingroup
+% Target photo aspect ratio: width:height = 12:13 (960 x 1040 source frames).
+\newlength{\overviewphotowidth}
+\setlength{\overviewphotowidth}{.18\linewidth}
+\newlength{\overviewimagewidth}
+\newlength{\overviewimageheight}
+% Arguments: card width, visible stage label, image path, photo-selection note.
+% The fourth argument documents the intended image without adding a second caption.
+\newcommand{\overviewstage}[4]{%
+ \begin{minipage}[c]{#1}\centering
+  \setlength{\overviewimagewidth}{\overviewphotowidth}%
+  \ifdim\overviewimagewidth>\linewidth
+   \setlength{\overviewimagewidth}{\linewidth}%
+  \fi
+  \setlength{\overviewimageheight}{\dimexpr\overviewimagewidth*13/12\relax}%
+  \parbox[c][\overviewimageheight][c]{\overviewimagewidth}{\centering
+   \IfFileExists{#3}{%
+    \includegraphics[width=\overviewimagewidth,height=\overviewimageheight,keepaspectratio]{#3}%
+   }{%
+    \includegraphics[width=\overviewimagewidth,height=\overviewimageheight]{example-image-duck-portrait}%
+   }%
+  }\par\vspace{2pt}%
+  \parbox[c][.28in][c]{\linewidth}{\centering\small\bfseries #2}%
+ \end{minipage}}
+
+\makebox[\linewidth][l]{\textbf{A. Recorded procedure}}\par\smallskip
+\overviewstage{.18\linewidth}{Dissection}{figures/overview/dissection.jpg}{Dissection and tool exposure}%
+\hspace{1pt}\raisebox{12pt}{\textcolor{gray}{$\rightarrow$}}\hspace{1pt}%
+\overviewstage{.18\linewidth}{}{figures/overview/muscle_repair.jpg}{Tool use during muscle repair}%
+\hspace{1pt}%
+\overviewstage{.18\linewidth}{Repair phases}{figures/overview/soft_palate.jpg}{Tool use during soft-palate repair}%
+\hspace{1pt}%
+\overviewstage{.18\linewidth}{}{figures/overview/hard_palate.jpg}{Tool use during hard-palate repair}%
+\hspace{1pt}\raisebox{12pt}{\textcolor{gray}{$\rightarrow$}}\hspace{1pt}%
+\overviewstage{.18\linewidth}{Closure}{figures/overview/closure.jpg}{Completed closure}%
+\par\smallskip
+
+\makebox[\linewidth][l]{\textbf{B. Suturing annotation}}\par\smallskip
+\overviewstage{.18\linewidth}{Needle pickup}{figures/overview/needle_pickup.jpg}{Needle grasp and orientation}%
+\hspace{1pt}\raisebox{12pt}{\textcolor{gray}{$\rightarrow$}}\hspace{1pt}%
+\overviewstage{.18\linewidth}{Needle exits tissue}{figures/overview/needle_exit.jpg}{Needle passage and tissue handling}%
+\hspace{1pt}\raisebox{12pt}{\textcolor{gray}{$\rightarrow$}}\hspace{1pt}%
+\overviewstage{.18\linewidth}{Last throw tightened}{figures/overview/knot_tightened.jpg}{Knot tightening}%
+\hspace{1pt}\raisebox{12pt}{\textcolor{gray}{$\rightarrow$}}\hspace{1pt}%
+\overviewstage{.18\linewidth}{Assistant cuts and\\removes thread}{figures/overview/assistant_cut.jpg}{Assistant cutting and removal}%
+% Confirm event alignment: analysis currently uses tissue contact and cutting.
+\endgroup
+\caption{\textbf{Procedure overview.} (A) Dissection, three repair views (muscle repair, soft palate, and hard palate, from left to right), and closure. These representative stages do not prescribe a universal sequence for every case. (B) Suturing annotation stages. Stitch timing starts at needle--tissue contact and ends at knot tightening; the assistant interval ends at cutting. Needle pickup and thread removal are shown as visual context.}
+\label{fig:workflow}
+\end{figure*}

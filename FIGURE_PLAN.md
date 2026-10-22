@@ -1,6 +1,23 @@
-# Figure priorities and a four-figure layout
+# Current four-figure layout
 
-**Selected layout:** The PDF now includes the top four available figures: occlusion, full procedure, per-suture phase timing, and knot throws. The stitch-overview figure has been removed from the PDF. Its per-pig statistics are preserved in an editable LaTeX table, [sections/tables/suture_by_pig.tex](sections/tables/suture_by_pig.tex). All tables are collected in the draft supplement, leaving four main display items. The technique-focused layout below remains an alternative for a later writing pass.
+**Selected revision:** Suture-phase timing and knot throws now share Figure 4. A draft, editable workflow schematic occupies the opening slot.
+
+| Figure | Content | Width | Role |
+| --- | --- | --- | --- |
+| 1 | Procedure and suture-event overview | Full width | Headliner explaining the workflow and timing definitions. The schematic is drawn in `sections/overview.tex` from recorded annotation stages; verified operative stills can replace the boxes. |
+| 2 | Annotated full-procedure timelines | Full width | Shows case-level dissection, repair phases, pauses, and elapsed duration. |
+| 3 | Occlusion distribution and selected masked views | One column | Shows the recorded visibility difference and illustrates the image masks. |
+| 4 | Combined suture timing and knot throws | One column | Panel a shows all three phase durations on a logarithmic axis, b shows throw counts, and c shows interval-per-throw density modes. |
+
+Figure 4 uses the three-panel composite exported by the analysis repository at single-column width. The occlusion figure and all supplemental tables also use one column.
+
+There are still exactly four numbered figures. The removed stitch overview's statistics remain in editable LaTeX tables. All tables are in the draft supplement.
+
+The overview is a **draft annotation schematic**, not a claim that every case followed a fixed muscle/soft-palate/hard-palate sequence. The stage boxes and caption are directly editable. Do not substitute a schematic for verified closure-quality measurements or claim that it documents operative details that have not been checked.
+
+# Earlier priorities and layout options
+
+**Selected layout:** The PDF includes the top four available figures, ordered as full procedure (Figure 1), occlusion (Figure 2), per-suture phase timing (Figure 3), and knot throws (Figure 4). The stitch-overview figure has been removed from the PDF. Its per-pig statistics are preserved in an editable LaTeX table, [sections/tables/suture_by_pig.tex](sections/tables/suture_by_pig.tex). All tables are collected in the draft supplement, leaving four main display items. The technique-focused layout below remains an alternative for a later writing pass.
 
 “Significance” below means relevance to the paper's argument. These descriptive results do not establish statistical significance or equivalence.
 
@@ -55,3 +72,7 @@ This layout is implemented. The stitch overview is replaced by an editable suppl
 - Distinguish density modes from medians. Do not describe the 39.4 versus 40.2 second peaks as proof of equivalence.
 - Show the timing disadvantage alongside the visualization advantage. Avoid a general claim that smaller instruments were faster or more efficient.
 - Keep the technique-image slot conditional on selecting suitable study images. Do not substitute prior simulator photographs as evidence of the porcine procedure.
+
+## Current layout trial
+
+[PRESENTATION_OPTIONS.md](PRESENTATION_OPTIONS.md) documents case-label choices and the revised result order. The procedure is a full-width top figure; the remaining three figures and all tables use one column. Phase and throw panels are vertically stacked, with vector crops of the source PDFs. Dates remain unchanged until a stable case-ID scheme is selected.

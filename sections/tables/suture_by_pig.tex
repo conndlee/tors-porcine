@@ -3,26 +3,29 @@
 % Numerical check: data/sutures/by_pig_timing.csv, derived from stitches.csv.
 \begin{table}[htbp]
 \centering\small
-\caption{Per-pig suture timing retained from the stitch-overview figure.}
+\caption{Per-pig suture timing.}
 \label{tab:suture-by-pig}
-\begin{tabularx}{\linewidth}{@{}Xlrrrr@{}}
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\linewidth}{@{}Xrrrr@{}}
 \toprule
-Recording & Tool & Stitches & Mean stitch (min) & Mean gap (min) & Suturing span (min) \\
+Pig & $n$ & \shortstack{Mean\\stitch} & \shortstack{Mean\\gap} & Span \\
 \midrule
-May 29 & 3 mm & 4 & 10.96 & 10.92 & 76.60 \\
-June 15 & 3 mm & 6 & 6.20 & 2.82 & 51.87 \\
-June 16 & 3 mm & 13 & 4.11 & 2.42 & 82.89 \\
-\textbf{Group mean} & 3 mm & \textbf{7.67} & \textbf{7.09} & \textbf{5.39} & \textbf{70.45} \\
+\multicolumn{5}{@{}l}{\textbf{3 mm instruments}} \\
+P01 & 4 & 10.96 & 10.92 & 76.60 \\
+P02 & 6 & 6.20 & 2.82 & 51.87 \\
+P03 & 13 & 4.11 & 2.42 & 82.89 \\
+\textbf{Mean} & \textbf{7.67} & \textbf{7.09} & \textbf{5.39} & \textbf{70.45} \\
 \midrule
-August 18 & 8 mm & 7 & 3.95 & 1.65 & 37.77 \\
-August 19 & 8 mm & 13 & 2.98 & 1.17 & 53.04 \\
-October 7 & 8 mm & 8 & 6.08 & 3.96 & 77.00 \\
-October 8 & 8 mm & 11 & 3.58 & 1.04 & 50.21 \\
-\textbf{Group mean} & 8 mm & \textbf{9.75} & \textbf{4.15} & \textbf{1.95} & \textbf{54.50} \\
+\multicolumn{5}{@{}l}{\textbf{8 mm instruments}} \\
+P04 & 7 & 3.95 & 1.65 & 37.77 \\
+P05 & 13 & 2.98 & 1.17 & 53.04 \\
+P06 & 8 & 6.08 & 3.96 & 77.00 \\
+P07 & 11 & 3.58 & 1.04 & 50.21 \\
+\textbf{Mean} & \textbf{9.75} & \textbf{4.15} & \textbf{1.95} & \textbf{54.50} \\
 \bottomrule
 \end{tabularx}
 \par\smallskip
 \begin{minipage}{\linewidth}\footnotesize
-Stitch duration runs from first needle contact to knot tightening. Gap runs from knot tightening to the next stitch's start and includes phase transitions. Span runs from first needle contact to the last retained cut or knot endpoint. The May 29 final assistant interval is excluded. Bold rows are arithmetic means of the pig-level values; the stitch count in these rows is therefore a mean, not a total. Each pig contributes equally. All recordings are from 2026.
+Times are in minutes; $n$ denotes stitches. Stitch duration ran from needle contact to knot tightening; gap ran from tightening to the next stitch's start, including phase transitions. Span ended at the last retained cut or knot event. Group rows are unweighted means of pig-level values, including $n$.
 \end{minipage}
 \end{table}

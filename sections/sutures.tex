@@ -2,35 +2,26 @@
 \WIPsubsection{Suture Timing}
 The seven main recordings contained 62 annotated stitches: 23 with 3 mm instruments and 39 with 8 mm instruments. Stitch duration ran from first needle--tissue contact to the last knot throw being tightened. Time from tightening to the assistant's cut was recorded separately (Fig.~\ref{fig:suture-phases}).
 
-The mean of the per-pig mean stitch durations was 7.1 minutes with 3 mm instruments and 4.1 minutes with 8 mm instruments. Median procedure duration, from dissection onset to the last retained cut or knot endpoint, was 115.91 versus 75.46 minutes (Table~\ref{tab:sutures}). These descriptive results did not demonstrate faster suturing with the smaller instruments. Figure~\ref{fig:procedure} shows the full annotated procedures, including dissection and repair phases.
+The mean of the per-pig mean stitch durations was 7.1 minutes with 3 mm instruments and 4.1 minutes with 8 mm instruments. These descriptive results did not demonstrate faster suturing with the smaller instruments.
 
-At the individual-suture level, pooled median needle-passage times were 121.8 seconds with 3 mm instruments and 71.3 seconds with 8 mm instruments. Median knot-tying times were 147.1 versus 123.4 seconds. The phase distributions and assistant intervals are shown in Figure~\ref{fig:suture-phases} and Table~\ref{tab:suture-phases}; stitches were clustered within pigs.
+At the individual-suture level, pooled median needle-passage times were 121.8 seconds with 3 mm instruments and 71.3 seconds with 8 mm instruments. Median knot-tying times were 147.1 versus 123.4 seconds. The phase distributions and assistant intervals are shown in Figure~\ref{fig:suture-analysis}a and Table~\ref{tab:suture-phases}; stitches were clustered within pigs.
 
-Needle passage and knot tying were also summarised by annotated repair region in the draft supplement (Table~\ref{tab:suture-regions}). Both groups had a median of three throws per knot; the pooled median knot interval per counted throw was 52.6 versus 43.5 seconds (Table~\ref{tab:knot-throws}). Per-pig statistics from the stitch overview are retained in Table~\ref{tab:suture-by-pig}. Motion data were available for 58 stitches and are reported separately (Table~\ref{tab:phase-motion}).
+Needle passage and knot tying were also summarised by annotated repair region in the supplement (Table~\ref{tab:suture-regions}). Figure~\ref{fig:suture-analysis}b--c shows throw counts and interval-per-throw distributions. Both groups had a median of three throws per knot; the pooled median knot interval per counted throw was 52.6 versus 43.5 seconds (Table~\ref{tab:knot-throws}). Per-pig statistics are reported in Table~\ref{tab:suture-by-pig}. Motion data were available for 58 stitches and are reported separately (Table~\ref{tab:phase-motion}).
 
-\begin{figure*}[tbp]
+% Single-column composite exported by the analysis repository.
+\begin{figure}[!tbp]
 \centering
-\includegraphics[width=\textwidth]{figures/results/procedure.pdf}
-\caption{Full annotated procedure timelines, aligned at dissection onset. Shaded bars identify dissection, muscle repair, soft-palate repair, and hard-palate repair. Purple bars mark individual stitches through the retained cut endpoint. Numbers at the right give procedure duration in minutes. The excluded May 29 final assistant interval is omitted, so that procedure ends at knot tightening. Unshaded intervals remain part of elapsed procedure time.}
-\label{fig:procedure}
-\end{figure*}
-
-\begin{figure*}[tbp]
-\centering
-\includegraphics[width=\textwidth]{figures/results/suture_phase_times.pdf}
-\caption{Individual-suture phase durations. (a) Needle passage. (b) Knot tying. (c) Assistant cutting interval. Each point represents one completed stitch; boxes show the interquartile range and thick lines the median. Purple denotes 3 mm instruments and teal denotes 8 mm instruments. The May 29 assistant-time outlier was excluded. Points are repeated observations within pigs.}
+\includegraphics[width=\linewidth]{figures/results/suture_combined.pdf}
+\caption{Suture timing and knot throws. (a) Needle passage, knot tying, and assistant intervals in minutes on a logarithmic axis; each point represents a stitch, boxes show interquartile ranges, and thick lines mark medians. (b) Throws per knot; the mode was three in both groups. (c) Knot interval per counted throw; triangles mark density modes of 39.4 and 40.2 seconds. One 3 mm assistant interval was excluded.}
+\label{fig:suture-analysis}
+% Alias labels preserve existing cross-references to the now-combined figure.
 \label{fig:suture-phases}
-\end{figure*}
-
-\begin{figure*}[tbp]
-\centering
-\includegraphics[width=\textwidth]{figures/results/knot_throws_mode.pdf}
-\caption{Knot throws and time per counted throw, mode version. (a) The most common count was three throws in both groups. (b) Triangles mark the principal Gaussian density peaks: 39.4 seconds for 3 mm and 40.2 seconds for 8 mm instruments, using an 8-second bandwidth. Purple denotes 3 mm instruments (23 knots, three pigs); teal denotes 8 mm instruments (39 knots, four pigs). Density peaks are modes, whereas Table~\ref{tab:knot-throws} reports medians. The timed interval includes thread pull-through.}
 \label{fig:knot-throws-mode}
-\end{figure*}
+\end{figure}
 
 \begin{itemize}
-\item The analysis excluded the 15.5-minute May 29 final knot-to-cut interval as an outlier. Its analyzed procedure duration changed from 115.60 to 100.08 minutes. \textbf{[Document the exclusion rationale and sensitivity to retaining this interval.]}
-\item The June 16 block summary included a repeated soft-palate block with 909\% stitching occupancy. Block-level occupancy was not used here.
-\item \textbf{[Confirm the October 8 duplicate needle-through mark and report timing by comparable repair phase.]}
+\item The analysis excluded the 15.5-minute P01 final knot-to-cut interval as an outlier. Its analyzed procedure duration changed from 115.60 to 100.08 minutes.
+% Editorial: Document the exclusion rationale and sensitivity to retaining this interval.
+\item The P03 block summary included a repeated soft-palate block with 909\% stitching occupancy. Block-level occupancy was not used here.
+% Editorial: Confirm the P07 duplicate needle-through mark and report timing by comparable repair phase.
 \end{itemize}

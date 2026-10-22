@@ -41,7 +41,7 @@ Limitations to address include porcine versus infant anatomy, simulated rather t
 
 Edit [authors.tex](authors.tex) for the author line, numbered affiliations, and corresponding-author details. The four supplied authors and affiliations are populated; online sources and user-supplied assignments are recorded in [AUTHOR_AFFILIATIONS.md](AUTHOR_AFFILIATIONS.md). Each is a multiline LaTeX block loaded by `main.tex`; add or remove author slots and match the superscript affiliation numbers. Correspondence appears on the title page in `submission` mode; `journalpreview` displays names below the title and affiliations at the bottom of the first column, with the two-column body beginning on the same page below the full-width abstract.
 
-- [main.tex](main.tex): manuscript metadata, inclusion of the draft, declarations, bibliography, and figure legend placeholders.
+- [main.tex](main.tex): manuscript metadata, inclusion of the draft, declarations, bibliography, and figure legends.
 - [sections/draft.tex](sections/draft.tex): brief summary, background, technique, evaluation, and discussion. It loads [occlusion.tex](sections/occlusion.tex) and [sutures.tex](sections/sutures.tex). Bold fields and bullets identify unfinished points.
 - [references.bib](references.bib): supplied paper plus primary studies on simulator validation, robotic simulator feasibility, and wrist friction.
 - [prsmanuscript.cls](prsmanuscript.cls): unofficial drafting class. `journalpreview` is for internal preview; select `submission` for submission-style formatting.
@@ -57,13 +57,13 @@ pdflatex main
 
 For a local PDF preview with Tectonic and a compatible Biber on `PATH`, run `make preview` and open [main.pdf](main.pdf) in the editor. Tectonic downloads required TeX packages on its first run and runs the bibliography processor automatically. The generated `main.pdf`, LaTeX intermediates, and local `build/` and `out/` directories are ignored by Git so they stay out of the Overleaf sync. Manuscript sources, reference PDFs, and figure assets remain eligible for Git.
 
-The rendered preview includes the bibliography, red WIP headings, and bold placeholders. The temporary toolchain (Tectonic with Biber 2.17 for its bundled biblatex 3.17) used in this session is under `/tmp` and may disappear after a restart. While it exists, rebuild using:
+The rendered preview includes the bibliography, red WIP headings, and bold fields for missing details. The temporary toolchain (Tectonic with Biber 2.17 for its bundled biblatex 3.17) used in this session is under `/tmp` and may disappear after a restart. While it exists, rebuild using:
 
 ```sh
 PATH=/tmp/tors-biber:/tmp/tors-latex/bin:$PATH XDG_CACHE_HOME=/tmp/tors-tex-cache make preview
 ```
 
-Verify actual abstract and body word counts after completing the draft; title-page counts remain placeholders.
+Verify actual abstract and body word counts after completing the draft; title-page counts remain to be filled in.
 
 ## Repository submission guidelines
 
@@ -100,7 +100,7 @@ The analysis repository `/home/connor/tors-data-anal` was read without modificat
 - **Occlusion:** The seven main recordings give a median of recording medians of 10.39% (3 mm) versus 23.93% (8 mm). After excluding occlusion below 1%, these become 10.71% versus 24.42%. The density plot pools filtered frames and gives 11.0% versus 25.1%; do not mix these summaries.
 - **Timing:** There are 62 annotated stitches (23 versus 39). The mean of per-pig mean stitch durations is 7.1 versus 4.1 minutes. Median procedure duration is 115.91 versus 75.46 minutes. These descriptive findings favor 8 mm instruments for speed.
 - **Figures in the draft:** One occlusion figure combines the distribution and two illustrative masked views. The main PDF contains four figures: occlusion, full procedure, individual-suture phase timing, and knot throws. All tables are collected in the draft supplement.
-- **Full procedure figure:** [figures/results/procedure.pdf](figures/results/procedure.pdf) is included as Figure 2. It shows dissection, repair phases, pauses, and total duration for every main recording. Individual-case timelines remain supplemental candidates.
+- **Full procedure figure:** [figures/results/procedure.pdf](figures/results/procedure.pdf) is included as Figure 1. It shows dissection, repair phases, pauses, and total duration for every main recording. Individual-case timelines remain supplemental candidates.
 
 The results are included through `sections/draft.tex`, and copied assets in [figures/results](figures/results) make the Overleaf build independent of the analysis repository. Numerical snapshots are in [data/occlusion](data/occlusion) and [data/sutures](data/sutures). The dated [source hash manifest](data/analysis_sources_2026-10-22.sha256) identifies the reviewed files. The older `video_summary.csv` and `source_sha256.txt` retain the six-recording snapshot from October 16; they are not the current table source.
 
@@ -147,8 +147,28 @@ All eight copied result assets were re-sourced from the analysis repository afte
 
 ## Editable tables and selected figures
 
-The main paper contains exactly four numbered figures: occlusion, full procedure, per-suture phase timing, and knot throws (mode version). The redundant stitch-overview graphic is no longer embedded. Its per-pig stitch counts, mean stitch and gap times, suturing spans, and group means are retained in [sections/tables/suture_by_pig.tex](sections/tables/suture_by_pig.tex).
+The main paper contains exactly four numbered figures: full procedure, occlusion, per-suture phase timing, and knot throws (mode version). The redundant stitch-overview graphic is no longer embedded. Its per-pig stitch counts, mean stitch and gap times, suturing spans, and group means are retained in [sections/tables/suture_by_pig.tex](sections/tables/suture_by_pig.tex).
 
-All seven tables are native LaTeX files under [sections/tables](sections/tables), loaded by the draft supplement. Each file contains its own caption, label, column specification, headers, rows, and notes. Edit these directly; there is no automatic CSV import or build step that overwrites table edits. When adding/removing a column, update the column specification, header, each row, and explanatory notes together. Retain labels so existing cross-references continue to work. The numerical check for the new per-pig table is `data/sutures/by_pig_timing.csv`; its group rows are means across pigs, including the mean stitch count rather than a group total.
+All tables are native LaTeX files under [sections/tables](sections/tables), loaded by the draft supplement. Each file contains its own caption, label, column specification, headers, rows, and notes. Edit these directly; there is no automatic CSV import or build step that overwrites table edits. When adding/removing a column, update the column specification, header, each row, and explanatory notes together. Retain labels so existing cross-references continue to work. The numerical check for the new per-pig table is `data/sutures/by_pig_timing.csv`; its group rows are means across pigs, including the mean stitch count rather than a group total.
 
 The manuscript retains essential results in the main text. The tables remain visible in the preview as draft supplemental material and can be packaged separately for submission.
+
+## Case-label and flow options
+
+[PRESENTATION_OPTIONS.md](PRESENTATION_OPTIONS.md) compares date labels, neutral IDs, letters, and group-coded IDs. The selected convention is P01–P07 in chronological main-case order, with Pilot separate. The fixed mapping and analysis-repository instruction are in [CASE_LABELS.md](CASE_LABELS.md), with a machine-readable crosswalk in [data/case_labels.csv](data/case_labels.csv). Manuscript text, tables, and the refreshed figure exports use these IDs. The nine copied result assets were refreshed from the analysis repository after case-label regeneration; provenance is recorded in [data/figure_label_sources_2026-10-22.sha256](data/figure_label_sources_2026-10-22.sha256).
+
+The result order is now **annotated procedure, occlusion, then suturing**. Figure 1 is a full-width top float; Figures 2–4 use one column. The phase and throw panels are stacked using vector viewports of the original PDFs; update the viewport bounds if the analysis figure layout changes. The source figures are not altered. All supplemental tables use one-column comparisons in a two-column supplement. The motion table is split into needle-passage and knot-tying tables to preserve readable type. Tables remain directly editable in `sections/tables/`.
+
+## Combined suture figure and workflow headliner
+
+The current four figures are: **1**, a draft procedure/suture-event schematic; **2**, the full annotated procedure timelines; **3**, occlusion; and **4**, combined per-suture timing and knot throws. The overview is native, editable LaTeX in `sections/overview.tex`. It describes the annotation workflow, not an independently verified operative technique sequence. Figure 4 uses a three-panel, single-column composite exported from `results/sutures/combined/suture_figure.pdf` in the analysis repository and copied to `figures/results/suture_combined.pdf`. Panel a groups the three phase durations on a logarithmic axis, b shows throw counts, and c shows time per throw. Occlusion and all tables also use one column. Existing phase/throw cross-reference labels point to the same combined Figure 4. Numerical results are unchanged.
+
+### Overview photograph slots
+
+Figure 1 now reserves five procedure photographs (dissection, muscle repair, soft palate, hard palate, closure) and four suturing photographs. Panel B is titled **Suturing annotation**, with the draft sequence **Needle pickup → Needle exits tissue → Last throw tightened → Assistant cuts and removes thread**. Add the files described in [figures/overview/README.md](figures/overview/README.md), or edit the image paths in `sections/overview.tex`; images load automatically when their files exist. The current numerical timing definitions are unchanged. Pickup precedes the recorded tissue-contact start, and thread removal is not the recorded cut endpoint, so those proposed visual labels remain explicitly marked for alignment.
+
+The overview photo slots use the occlusion-image aspect ratio: **12:13 (960 × 1040)**. Replacement photographs retain their proportions; any slight crop is prepared in the image asset rather than stretching the image.
+
+### Surgical methods draft
+
+[sections/surgical_methods.tex](sections/surgical_methods.tex) is loaded by the main draft. It contains brief past-tense prose with bold fields for animal-care approval, animal characteristics, anaesthetic drugs/doses/routes, airway and monitoring arrangements, analgesia, experimental endpoints, simulated-cleft creation, exposure, and repair details. Fill these from the animal protocol, anaesthetic record, and operative notes. No drug regimen, approval identifier, or unrecorded surgical detail has been invented. Overview stage labels now appear below the portrait images; row titles remain above.

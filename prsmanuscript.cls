@@ -28,8 +28,11 @@
 \ifprs@preview
   \geometry{margin=.72in,columnsep=.26in}
   \setstretch{1.02}
-  % Allow long drafting placeholders and references to wrap in narrow columns.
+  % Allow long draft fields and references to wrap in narrow columns.
   \setlength{\emergencystretch}{2em}
+  % Align float-only pages at the top instead of vertically centering them.
+  \setlength{\@fptop}{0pt}
+  \setlength{\@dblfptop}{0pt}
   \setlength{\parindent}{1em}
   \setlength{\parskip}{0pt}
   \captionsetup{font=footnotesize,labelfont=bf,labelsep=period}
@@ -106,6 +109,5 @@
 \newcommand\PRSdisclosure[2]{\par\noindent\textbf{#1:} #2\par}
 \newcommand\PRStable[2]{\par\refstepcounter{table}\label{#1}\noindent\textbf{Table \thetable.} #2\par\medskip}
 \newcommand\PRSfigurelegend[2]{\par\noindent\textbf{Fig. #1.} #2\par\medskip}
-\newcommand\PRSfigureplaceholder[2]{\ifprs@draftfigures\par\begin{center}\fbox{\parbox[c][1.25in][c]{.8\linewidth}{\centering\textbf{Draft figure #1}\par #2}}\end{center}\fi}
 \AtBeginDocument{\ifprs@preview\else\linenumbers\fi}
 \endinput

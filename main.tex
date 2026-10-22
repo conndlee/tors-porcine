@@ -2,7 +2,7 @@
 % Plastic and Reconstructive Surgery (PRS): Ideas & Innovations draft
 % Unofficial manuscript class, NOT the journal's production template.
 % Build: pdflatex main; biber main; pdflatex main; pdflatex main
-% Toggle [draftfigures] below for placeholders; remove for submission.
+% Toggle [draftfigures] below for draft figure indicators; remove for submission.
 % Repository guidelines: unstructured abstract <=250 words, body <=1000 words.
 % See README.md for figure and supplemental-content limits.
 % =====================================================================
@@ -10,6 +10,8 @@
 % Visual approximation of a published paper: use [journalpreview,draftfigures]
 % \documentclass[submission,draftfigures]{prsmanuscript}
 \documentclass[journalpreview,draftfigures]{prsmanuscript}
+% Duck images fill unpopulated photograph slots in the overview.
+\usepackage{duckuments}
 \usepackage[backend=biber,style=numeric-comp,sorting=none,
   maxbibnames=6,minbibnames=3,giveninits=true,
   doi=true,isbn=false,url=false]{biblatex}
@@ -30,7 +32,7 @@
 \PRSshorttitle{Miniature Instruments for Porcine Palate Repair}
 % Edit names, affiliations, and correspondence in authors.tex.
 \input{authors}
-\PRSwordcounts{\textbf{[insert actual count]}}{\textbf{[insert actual count]}}
+\PRSwordcounts{\textbf{[\_\_\_]}}{\textbf{[\_\_\_]}}
 \PRSmetadata{\noindent\textbf{Article category:} Ideas \& Innovations\par
 \noindent\textbf{Prior presentation:} \textbf{[Meeting, location, date; or None]}\par
 \noindent\textbf{Funding:} \textbf{[Funding source and grant; or None]}\par
@@ -47,9 +49,7 @@
 \PRSdisclosure{Acknowledgments}{\textbf{[Non-author contributions, if any.]}}
 \PRSdisclosure{Funding}{\textbf{[Grant and sponsor roles; or no external funding.]}}
 \PRSdisclosure{Disclosure}{\textbf{[Relevant financial/nonfinancial interests for all authors; or none.]}}
-\PRSdisclosure{Ethics approval and consent}{\textbf{[Animal care committee name, protocol number, and applicable animal welfare guidelines; confirm before submission.]}}
-\PRSdisclosure{Data availability}{\textbf{[Availability and privacy/access restrictions, if applicable.]}}
-\PRSdisclosure{Author contributions}{\textbf{[Contributions; verify all named authors meet authorship criteria.]}}
+\PRSdisclosure{Ethics approval and consent}{\textbf{[Animal care committee name, protocol number, and applicable animal welfare guidelines.]}}
 
 \clearpage
 \printbibliography[title={References},heading=bibintoc]
@@ -57,10 +57,10 @@
 % Four main figures; all editable tables are collected in the draft supplement.
 \clearpage
 \section*{Figure Legends}
-\PRSfigurelegend{1}{Instrument occlusion distributions and selected masked suturing views. Purple denotes 3 mm instruments and teal denotes 8 mm instruments. Density curves use a Gaussian kernel with a bandwidth of 1.5 percentage points. Dark frames and frames with less than 1\% occlusion are excluded. The selected views are not matched for camera position.}
-\PRSfigurelegend{2}{Full procedure timelines aligned at dissection onset, with annotated dissection and repair phases, individual stitches, and elapsed duration. The May 29 final assistant interval was excluded; that recording ends at knot tightening.}
-\PRSfigurelegend{3}{Individual-suture needle-passage, knot-tying, and assistant intervals. Points represent stitches; boxes show interquartile ranges and thick lines mark medians. The May 29 assistant outlier is excluded. Stitches are clustered within pigs.}
-\PRSfigurelegend{4}{Knot throws and knot interval per counted throw. Triangles mark the most common count and the principal time-density peaks, using an 8-second Gaussian bandwidth. The interval includes thread pull-through; density modes are distinct from the medians in the supplemental table.}
+\PRSfigurelegend{1}{Procedure and suturing-annotation overview. Stitch timing starts at needle--tissue contact and ends at knot tightening; the assistant interval ends at cutting. Needle pickup and thread removal are shown as visual context. Repair-region labels do not prescribe a universal sequence.}
+\PRSfigurelegend{2}{Full procedure timelines aligned at dissection onset. Shaded bars identify annotated repair phases; purple bars show stitches. The P01 final assistant interval was excluded; that recording ends at knot tightening.}
+\PRSfigurelegend{3}{Instrument occlusion distributions and selected masked views. Purple: 3 mm; teal: 8 mm. Density bandwidth is 1.5 percentage points. Dark frames and occlusion below 1\% are excluded. Selected views are not matched for camera position.}
+\PRSfigurelegend{4}{Combined suture timing and knot throws. Panel a shows phase durations on a logarithmic axis, b shows throws per knot, and c shows interval per throw with density-mode markers. The knot interval includes thread pull-through. Observations are clustered within pigs; the excluded P01 assistant interval is omitted.}
 
 % Upload figure files and Supplemental Digital Content separately.
 % Detailed draft tables are kept outside the concise main presentation.
