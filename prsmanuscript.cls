@@ -108,6 +108,6 @@
 \fi}
 \newcommand\PRSdisclosure[2]{\par\noindent\textbf{#1:} #2\par}
 \newcommand\PRStable[2]{\par\refstepcounter{table}\label{#1}\noindent\textbf{Table \thetable.} #2\par\medskip}
-\newcommand\PRSfigurelegend[2]{\par\noindent\textbf{Fig. #1.} #2\par\medskip}
+\newcommand\PRSfigurelegend[2]{\par\noindent\textbf{\hyperref[#1]{Fig.~\ref*{#1}}.} #2\par\medskip}
 \AtBeginDocument{\ifprs@preview\else\linenumbers\fi}
 \endinput

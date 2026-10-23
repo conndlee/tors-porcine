@@ -20,7 +20,7 @@ Source recordings are stereo endoscopic video and robot rosbags. The premise ide
 | Immediate closure quality | Gaps, suture spacing, bite depth | Document scoring rules, any comparability margin, and when they were selected; physical dimensions require a scale or independent measurement. These do not alone measure closure strength or healing. |
 | Visualization | Fraction of image area occupied by instruments | Define the image region, mask rules, sampling, task matching, and camera-view comparability. Image fractions do not require metric stereo calibration. |
 | Tissue interaction | Peak tissue force, only if a validated estimate is possible | Check joint effort/motor current and instrument calibration; account for transmission and friction. Jaw grip effort is distinct from tissue traction or needle-driving force. Otherwise report effort as a proxy. Video deformation alone is insufficient for a quantitative force claim. |
-| Suturing | Time per suture, separately for nasal, muscle, and oral layers where present | Start at first needle–tissue contact; choose a consistent end at knot tightening or suture cutting; label interruptions and incomplete sutures. |
+| Suturing | Time per suture, separately for nasal, muscle, and oral layers where present | Start at needle pickup; choose a consistent end at knot tightening or suture cutting; label interruptions and incomplete sutures. |
 | Supporting performance | Tool–tool and tool–teeth/retractor contacts; clutch/reposition events; posterior access; grasps/regrasps; total and step time | Document the event definitions used, exposure denominators, and rules for events outside the camera view. |
 | Motion | Path length, smoothness, workspace volume | Verify kinematics, sampling, and coordinate frames. Report tool-relative workspace; do not claim anatomically registered volume from inaccurate base frames. Define any duration normalization. |
 
@@ -57,11 +57,16 @@ pdflatex main
 
 For a local PDF preview with Tectonic and a compatible Biber on `PATH`, run `make preview` and open [main.pdf](main.pdf) in the editor. Tectonic downloads required TeX packages on its first run and runs the bibliography processor automatically. The generated `main.pdf`, LaTeX intermediates, and local `build/` and `out/` directories are ignored by Git so they stay out of the Overleaf sync. Manuscript sources, reference PDFs, and figure assets remain eligible for Git.
 
+The manuscript uses `biblatex` with `style=ieee` and bracketed `\cite{...}` citations before punctuation. `cleveref` with `nameinlink` makes figure and table names and numbers clickable; use `\cref{...}` in sentences and `\Cref{...}` at the start. Panel references use `\hyperref` around an unlinked `\Cref*` plus panel letters. Figure legend headings also link to their figures.
+
 The rendered preview includes the bibliography, red WIP headings, and bold fields for missing details. The temporary toolchain (Tectonic with Biber 2.17 for its bundled biblatex 3.17) used in this session is under `/tmp` and may disappear after a restart. While it exists, rebuild using:
 
 ```sh
-PATH=/tmp/tors-biber:/tmp/tors-latex/bin:$PATH XDG_CACHE_HOME=/tmp/tors-tex-cache make preview
+PATH=/tmp/tors-biber:/tmp/tors-latex/bin:$PATH XDG_CACHE_HOME=/tmp/tors-tex-cache \
+  make preview TECTONIC="tectonic -Z search-path=/tmp/tors-tex-extras/biblatex-ieee-1.3c"
 ```
+
+The temporary IEEE style under `/tmp/tors-tex-extras/biblatex-ieee-1.3c` is compatible with this older local BibLaTeX bundle; `cleveref` is cached by Tectonic. A standard TeX installation or Overleaf supplies both `biblatex-ieee` and `cleveref` directly.
 
 Verify actual abstract and body word counts after completing the draft; title-page counts remain to be filled in.
 
@@ -165,10 +170,14 @@ The current four figures are: **1**, a draft procedure/suture-event schematic; *
 
 ### Overview photograph slots
 
-Figure 1 now reserves five procedure photographs (dissection, muscle repair, soft palate, hard palate, closure) and four suturing photographs. Panel B is titled **Suturing annotation**, with the draft sequence **Needle pickup → Needle exits tissue → Last throw tightened → Assistant cuts and removes thread**. Add the files described in [figures/overview/README.md](figures/overview/README.md), or edit the image paths in `sections/overview.tex`; images load automatically when their files exist. The current numerical timing definitions are unchanged. Pickup precedes the recorded tissue-contact start, and thread removal is not the recorded cut endpoint, so those proposed visual labels remain explicitly marked for alignment.
+Figure 1 now reserves five procedure photographs (dissection, muscle repair, soft palate, hard palate, closure) and four suturing photographs. Panel B is titled **Suturing annotation**, with the draft sequence **Needle pickup → Needle exits tissue → Last throw tightened → Assistant cuts and removes thread**. Add the files described in [figures/overview/README.md](figures/overview/README.md), or edit the image paths in `sections/overview.tex`; images load automatically when their files exist. The author confirmed that the existing stitch-start annotations mark needle pickup, rather than needle–tissue contact. Suture placement time runs from needle pickup to tightening of the final throw; the interval between successive sutures runs from final knot tightening to the next needle pickup. Thread removal remains visual context after the measured cutting endpoint. This clarification changes the wording, not the timestamps or calculated durations. The analysis repository's older captions still describe tissue contact and need corresponding wording updates.
 
 The overview photo slots use the occlusion-image aspect ratio: **12:13 (960 × 1040)**. Replacement photographs retain their proportions; any slight crop is prepared in the image asset rather than stretching the image.
 
 ### Surgical methods draft
 
 [sections/surgical_methods.tex](sections/surgical_methods.tex) is loaded by the main draft. It contains brief past-tense prose with bold fields for animal-care approval, animal characteristics, anaesthetic drugs/doses/routes, airway and monitoring arrangements, analgesia, experimental endpoints, simulated-cleft creation, exposure, and repair details. Fill these from the animal protocol, anaesthetic record, and operative notes. No drug regimen, approval identifier, or unrecorded surgical detail has been invented. Overview stage labels now appear below the portrait images; row titles remain above.
+
+## Figure refresh (2026-10-23)
+
+Refreshed all nine assets in `figures/results/` from their existing mappings in `/home/connor/tors-data-anal`, accessed read-only. Only `procedure.pdf` differed from the previous copy; its extracted labels and durations were unchanged. The other eight assets were already current. Source hashes are recorded in [data/figure_sources_2026-10-23.sha256](data/figure_sources_2026-10-23.sha256). The source timing tables retain the same values, with added case-ID fields; the fixed case mapping is unchanged. Manuscript data snapshots and captions were preserved.

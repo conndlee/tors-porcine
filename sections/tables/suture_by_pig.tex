@@ -3,12 +3,12 @@
 % Numerical check: data/sutures/by_pig_timing.csv, derived from stitches.csv.
 \begin{table}[htbp]
 \centering\small
-\caption{Per-pig suture timing.}
+\caption{Suturing times per-animal.}
 \label{tab:suture-by-pig}
 \setlength{\tabcolsep}{3pt}
 \begin{tabularx}{\linewidth}{@{}Xrrrr@{}}
 \toprule
-Pig & $n$ & \shortstack{Mean\\stitch} & \shortstack{Mean\\gap} & Span \\
+Animal & $n$ & \shortstack{Mean suture\\placement} & \shortstack{Mean interval\\between sutures} & \shortstack{Elapsed suturing\\period} \\
 \midrule
 \multicolumn{5}{@{}l}{\textbf{3 mm instruments}} \\
 P01 & 4 & 10.96 & 10.92 & 76.60 \\
@@ -26,6 +26,6 @@ P07 & 11 & 3.58 & 1.04 & 50.21 \\
 \end{tabularx}
 \par\smallskip
 \begin{minipage}{\linewidth}\footnotesize
-Times are in minutes; $n$ denotes stitches. Stitch duration ran from needle contact to knot tightening; gap ran from tightening to the next stitch's start, including phase transitions. Span ended at the last retained cut or knot event. Group rows are unweighted means of pig-level values, including $n$.
+Times are in minutes; $n$ denotes stitches. Suture placement time was measured from needle pickup to tightening of the final throw; the interval between successive sutures ran from final knot tightening to the next suture's start, including phase transitions. The elapsed suturing period was measured from first needle pickup to the final included suture-cutting or knot-tightening event and included pauses. Group rows are unweighted means of animal-specific values, including $n$.
 \end{minipage}
 \end{table}

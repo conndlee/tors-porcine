@@ -16,8 +16,8 @@ The editable figure is [sections/overview.tex](../../sections/overview.tex). Eac
 
 - Select actual study frames. Record the case identifier, video, timestamp, instrument group, and any crop or overlay for each image.
 - Keep tissue orientation and magnification comparable where feasible. Do not imply that selected images are matched if they are not.
-- The current analysis starts stitch timing at first needle–tissue contact and ends it at knot tightening. The assistant interval ends at the cut annotation. Needle pickup and thread removal are proposed visual labels, not verified replacements for these numerical endpoints.
-- Confirm annotation semantics before changing methods, tables, or calculated durations. No timing data were changed when this overview was added.
+- The author confirmed that existing stitch-start annotations mark needle pickup. Suture placement time is measured from needle pickup to tightening of the final throw. The knot-to-cut interval ends at the cut annotation; thread removal is shown as visual context.
+- The needle-pickup clarification corrects the wording only; existing timestamps and calculated durations are unchanged.
 - Photo frames use **12:13 width:height**, matching the 960 × 1040 occlusion images. Real images are fitted without stretching; prepare a modest crop near 12:13 if needed to fill the frame. Retain uncropped source frames and document crops.
 - Card width is controlled by the `\overviewstage` calls. All nine photo slots use the same display width (18% of the full figure width, capped by the card width). Photo height is calculated using the 13/12 factor in the macro; edit that factor if the intended crop changes. Labels and paths remain ordinary editable arguments.
 

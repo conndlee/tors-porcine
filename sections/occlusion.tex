@@ -1,19 +1,15 @@
 % Current source snapshots: data/occlusion/summary_by_{system,segment}.csv.
-\WIPsubsection{Instrument Occlusion}
-Instrument masks covered shafts, wrists, and jaws in the left endoscopic view. Occlusion was sampled at one frame per second.
-The median of the recording medians was 10.39\% with 3 mm instruments and 23.93\% with 8 mm instruments (Table~\ref{tab:occlusion}). With occlusion below 1\% excluded, the corresponding values were 10.71\% and 24.42\%. The pooled-frame density plot used this latter filter and had medians of 11.0\% and 25.1\% (Fig.~\ref{fig:occlusion}).
+\WIPsubsection{Visual Field Obstruction}
+Visual field obstruction was defined as the percentage of the left endoscopic image occupied by instruments. Training masks were created using click-assisted segmentation with Segment Anything Model 2 (SAM 2), a deep learning model~\cite{ravi2024sam2}. These masks were used to train an instrument segmentation model that generated masks across the recordings. Instrument masks included the shafts, wrists, and jaws. Images were sampled at one frame per second.
+The median of the recording medians was 10.39\% with 3 mm instruments and 23.93\% with 8 mm instruments (\cref{tab:occlusion}). With frames showing less than 1\% visual field obstruction excluded, the corresponding values were 10.71\% and 24.42\%. The frame density plot has medians of 11.0\% and 25.1\% (\cref{fig:occlusion}).
 
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=\linewidth]{figures/results/occlusion_distribution.pdf}\par\smallskip
 \includegraphics[width=.46\linewidth]{figures/results/occlusion_example_3mm.png}\hfill
 \includegraphics[width=.46\linewidth]{figures/results/occlusion_example_8mm.png}
-\caption{Instrument occlusion in the main recordings. Top: Gaussian kernel density curves for pooled frames with at least 1\% occlusion; dashed lines mark medians. Bottom: selected suturing examples with instrument masks, 3 mm on the left (11\% occlusion) and 8 mm on the right (30\%).}
+\caption{Visual field obstruction in the main recordings. Top: Gaussian kernel density curves for frames with at least 1\% obstruction; dashed lines mark medians. Bottom: selected suturing examples with instrument masks.}
 \label{fig:occlusion}
 \end{figure}
 
-\begin{itemize}
-\item Camera distance varied; lower image obstruction does not isolate instrument diameter from camera placement.
-\item The segmentation test used 30 held-out frames from the same six training-source recordings. Median intersection-over-union was 0.921 for 3 mm and 0.973 for 8 mm instruments. P01 was outside those six recordings.
-% Editorial: Confirm P01 mask quality and distinguish pooled-frame summaries from case-level estimates.
-\end{itemize}
+Segmentation performance was evaluated using 30 held-out frames. Median intersection-over-union was 0.921 for 3 mm and 0.973 for 8 mm instruments.

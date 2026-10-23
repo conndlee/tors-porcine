@@ -12,20 +12,19 @@
 \documentclass[journalpreview,draftfigures]{prsmanuscript}
 % Duck images fill unpopulated photograph slots in the overview.
 \usepackage{duckuments}
-\usepackage[backend=biber,style=numeric-comp,sorting=none,
-  maxbibnames=6,minbibnames=3,giveninits=true,
-  doi=true,isbn=false,url=false]{biblatex}
+\usepackage[backend=biber,style=ieee,sorting=none,
+  hyperref=true,doi=true,isbn=false,url=false]{biblatex}
 \addbibresource{references.bib}
+% The class loads hyperref; cleveref follows it so names and numbers link together.
+\usepackage[nameinlink]{cleveref}
+\crefname{figure}{Fig.}{Figs.}
+\Crefname{figure}{Figure}{Figures}
+\crefname{table}{Table}{Tables}
+\Crefname{table}{Table}{Tables}
 % Draft-only red headings; remove subsection divisions for submission.
 \newcommand{\WIPsection}[1]{\section{\texorpdfstring{\textcolor{red}{#1 (WIP)}}{#1 (WIP)}}}
 \newcommand{\WIPsubsection}[1]{\subsection{\texorpdfstring{\textcolor{red}{#1 (WIP)}}{#1 (WIP)}}}
-% Superscript numbers after punctuation, e.g. a sentence.\supercite{key}
-% AMA-like numeric reference list; verify punctuation/journal abbreviations
-% against the journal's current examples before final submission.
-\DeclareFieldFormat{labelnumberwidth}{#1\adddot}
-\DeclareFieldFormat[article]{title}{#1}
-\DeclareFieldFormat{journaltitle}{\mkbibemph{#1}}
-\renewbibmacro{in:}{}
+% IEEE bracketed citations precede punctuation: a sentence~\cite{key}.
 
 % ----- Manuscript metadata -----
 \PRStitle{Miniature Wristed Instruments for Transoral Robotic Simulated Cleft Palate Repair in a Live Porcine Model}
@@ -57,10 +56,10 @@
 % Four main figures; all editable tables are collected in the draft supplement.
 \clearpage
 \section*{Figure Legends}
-\PRSfigurelegend{1}{Procedure and suturing-annotation overview. Stitch timing starts at needle--tissue contact and ends at knot tightening; the assistant interval ends at cutting. Needle pickup and thread removal are shown as visual context. Repair-region labels do not prescribe a universal sequence.}
-\PRSfigurelegend{2}{Full procedure timelines aligned at dissection onset. Shaded bars identify annotated repair phases; purple bars show stitches. The P01 final assistant interval was excluded; that recording ends at knot tightening.}
-\PRSfigurelegend{3}{Instrument occlusion distributions and selected masked views. Purple: 3 mm; teal: 8 mm. Density bandwidth is 1.5 percentage points. Dark frames and occlusion below 1\% are excluded. Selected views are not matched for camera position.}
-\PRSfigurelegend{4}{Combined suture timing and knot throws. Panel a shows phase durations on a logarithmic axis, b shows throws per knot, and c shows interval per throw with density-mode markers. The knot interval includes thread pull-through. Observations are clustered within pigs; the excluded P01 assistant interval is omitted.}
+\PRSfigurelegend{fig:workflow}{Procedure overview. (A) Representative dissection, repair, and closure stages. (B) Suturing events. Suture placement time runs from needle pickup to final throw tightening; the subsequent interval ends at suture cutting. Thread removal is shown for context.}
+\PRSfigurelegend{fig:procedure}{Procedure timelines aligned at dissection onset. Shading indicates operative phases; purple bars show sutures through cutting. Right-hand values give duration in minutes, including pauses.}
+\PRSfigurelegend{fig:occlusion}{Visual field obstruction distributions and selected masked views. Purple: 3 mm; teal: 8 mm. Density bandwidth is 1.5 percentage points. Dark frames and frames with less than 1\% visual field obstruction are excluded. Selected views are not matched for camera position.}
+\PRSfigurelegend{fig:suture-analysis}{Combined suture timing and knot throws. Panel a shows phase durations on a logarithmic axis, b shows throws per knot, and c shows knot-tying time per throw with density-mode markers. The knot interval includes suture pull-through. Observations are clustered within pigs; the excluded P01 knot-to-cut interval is omitted.}
 
 % Upload figure files and Supplemental Digital Content separately.
 % Detailed draft tables are kept outside the concise main presentation.
