@@ -4,7 +4,7 @@
 % Build: pdflatex main; biber main; pdflatex main; pdflatex main
 % Toggle [draftfigures] below for draft figure indicators; remove for submission.
 % Repository guidelines: unstructured abstract <=250 words, body <=1000 words.
-% See README.md for figure and supplemental-content limits.
+% See README.md for submission limits.
 % =====================================================================
 % Submission: use [submission] or [submission,draftfigures]
 % Visual approximation of a published paper: use [journalpreview,draftfigures]
@@ -21,9 +21,8 @@
 \Crefname{figure}{Figure}{Figures}
 \crefname{table}{Table}{Tables}
 \Crefname{table}{Table}{Tables}
-% Draft-only red headings; remove subsection divisions for submission.
-\newcommand{\WIPsection}[1]{\section{\texorpdfstring{\textcolor{red}{#1 (WIP)}}{#1 (WIP)}}}
-\newcommand{\WIPsubsection}[1]{\subsection{\texorpdfstring{\textcolor{red}{#1 (WIP)}}{#1 (WIP)}}}
+% Red text marks details or interpretations that require verification.
+\newcommand{\verifytext}[1]{\textcolor{red}{#1}}
 % IEEE bracketed citations precede punctuation: a sentence~\cite{key}.
 
 % ----- Manuscript metadata -----
@@ -31,7 +30,7 @@
 \PRSshorttitle{Miniature Instruments for Porcine Palate Repair}
 % Edit names, affiliations, and correspondence in authors.tex.
 \input{authors}
-\PRSwordcounts{\textbf{[\_\_\_]}}{\textbf{[\_\_\_]}}
+\PRSwordcounts{\verifytext{203 (draft estimate)}}{\verifytext{855 (draft estimate)}}
 \PRSmetadata{\noindent\textbf{Article category:} Ideas \& Innovations\par
 \noindent\textbf{Prior presentation:} \textbf{[Meeting, location, date; or None]}\par
 \noindent\textbf{Funding:} \textbf{[Funding source and grant; or None]}\par
@@ -54,15 +53,4 @@
 % \clearpage
 \printbibliography[title={References},heading=bibintoc]
 
-% % Four main figures; all editable tables are collected in the draft supplement.
-% \clearpage
-% \section*{Figure Legends}
-% \PRSfigurelegend{fig:workflow}{Procedure overview. (A) Representative dissection, repair, and closure stages. (B) Suturing events. Suture placement time runs from needle pickup to final throw tightening; the subsequent interval ends at suture cutting. Thread removal is shown for context.}
-% \PRSfigurelegend{fig:procedure}{Procedure timelines aligned at dissection onset. Shading indicates operative phases; purple bars show sutures through cutting. Right-hand values give duration in minutes, including pauses.}
-% \PRSfigurelegend{fig:occlusion}{Visual field obstruction distributions and selected masked views. Purple: 3 mm; teal: 8 mm. Density bandwidth is 1.5 percentage points. Dark frames and frames with less than 1\% visual field obstruction are excluded. Selected views are not matched for camera position.}
-% \PRSfigurelegend{fig:suture-analysis}{Combined suture timing and knot throws. Panel a shows phase durations on a logarithmic axis, b shows throws per knot, and c shows knot-tying time per throw with density-mode markers. The knot interval includes suture pull-through. Observations are clustered within pigs; the excluded P01 knot-to-cut interval is omitted.}
-
-% Upload figure files and Supplemental Digital Content separately.
-% Detailed draft tables are kept outside the concise main presentation.
-% \input{sections/suture_details}
 \end{document}

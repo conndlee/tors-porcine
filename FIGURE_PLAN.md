@@ -13,6 +13,6 @@ Figure 1 still needs study photographs; see [photo requirements](figures/overvie
 
 Figures 2–4 use exports in [figures/results/](figures/results/). Figure 4 uses `suture_combined.pdf`; the separate phase, knot, and stitch-overview PDFs are retained as working assets. Latest import hashes: [figure manifest](data/figure_sources_2026-10-23.sha256).
 
-The eight tables are in [sections/tables/](sections/tables/) and loaded by [suture_details.tex](sections/suture_details.tex). That supplement is currently disabled in `main.tex`; final supplemental packaging remains undecided.
+The eight analysis tables in [sections/tables/](sections/tables/) are working files and are excluded from the paper. The manuscript has no supplementary-analysis links.
 
 Before submission, replace the overview placeholders, check label readability at final size, and confirm how the journal counts combined figures/tables and panels. Limits are listed in the [README](README.md#repository-submission-guidelines).

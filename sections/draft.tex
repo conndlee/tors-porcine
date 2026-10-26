@@ -1,44 +1,35 @@
-% Short working segments; red headings and editorial bullets are draft-only.
+% Unstructured abstract, innovation presentation, and discussion.
 \begin{PRSabstract}
-Instrument size constrains visualization and instrument maneuverability during transoral robotic cleft palate repair. This paper compares miniature 3 mm wristed instruments with standard 8 mm instruments during simulated repair in a live porcine model. Procedures were performed by one surgeon with analysis including three 3 mm and four 8 mm recordings. Endoscopic video analysis quantified visual field obstruction computed using a fine-tuned deep learning model, and measured procedure duration and suture placement time. The median of recording-level median visual field obstruction was 10.4\% with 3 mm instruments and 23.9\% with 8 mm instruments. Across 62 stitches, the mean of animal-specific mean suture placement times was 7.1 versus 4.1 minutes, measured from needle pickup to tightening of the final throw. Median analyzed procedure duration was 115.9 versus 75.5 minutes, with one outlying knot-to-cut interval excluded. Three throws per knot was the most common count in both groups; density peaks for the knot-tying time per throw were 39.4 versus 40.2 seconds. \textbf{[Closure quality: \_\_\_]} The smaller instruments were associated with less visual field obstruction but longer suture placement times. Interpretation is limited by the small sample size, use of a single surgeon, and differences in camera position and operative steps.
+Instrument size constrains visualization and instrument maneuverability during transoral robotic cleft palate repair. This paper compares miniature 3 mm wristed instruments with standard 8 mm instruments during simulated repair in a live porcine model. Procedures were performed by one surgeon with analysis including three 3 mm and four 8 mm recordings. Endoscopic video analysis quantified visual field obstruction computed using a fine-tuned deep learning model, and measured procedure duration and suture placement time. The median of recording-level median visual field obstruction was 10.4\% with 3 mm instruments and 23.9\% with 8 mm instruments. Across 62 stitches, the mean of animal-specific mean suture placement times was 7.1 versus 4.1 minutes, measured from needle pickup to tightening of the final throw. Median analyzed procedure duration was 115.9 versus 75.5 minutes, with one outlying knot-to-cut interval excluded. Three throws per knot was the most common count in both groups; density peaks for the knot-tying time per throw were 39.4 versus 40.2 seconds. \verifytext{\textbf{[Repair completion and closure quality: pending operative review.]}} The smaller instruments were associated with less visual field obstruction but longer suture placement times. Interpretation is limited by the small sample size, use of a single surgeon, and differences in camera position and operative steps.
 \PRSkeywords{transoral robotic surgery; simulated cleft palate repair; miniature instruments; porcine model}
 \end{PRSabstract}
 \PRSstartbody
 \input{sections/overview}
 
-\WIPsection{Miniature Instruments for Simulated Cleft Palate Repair}
-\WIPsubsection{Background}
+\section*{Miniature Instruments for Simulated Cleft Palate Repair}
 Cleft palate repair requires delicate tissue handling within the limited space of the oral cavity. Simulator studies demonstrated the value of robotic articulation and visualization, while identifying instrument size as a constraint~\cite{podolsky2017simulator,podolsky2017robotic}.
 
 Compact, cable-driven 3 mm instruments were subsequently evaluated using reachability analysis and a synthetic cleft palate model. They reduced collisions and visual field obstruction relative to 8 mm instruments~\cite{maguire2025}. The present study evaluated simulated repair in living porcine tissue.
 
 \input{sections/surgical_methods}
 
-\WIPsubsection{Operative Evaluation}
 Stereo endoscopic recordings documented the repairs, and robot data were recorded in Robot Operating System (ROS) bag files~\cite{quigley2009ros}. Video annotations identified dissection, repair phases, needle passage, knot tightening, and assistant cutting.
 
-\begin{itemize}
-\item \textbf{[Annotation reviewers, synchronization, and agreement assessment.]}
-\item \textbf{[Completion counts, conversions, tool failures, dropped needles, and setup time.]}
-\item \textbf{[Closure quality, scoring method, and measurement scale.]}
-\item \textbf{[Additional measured outcomes, including tissue effort or validated force.]}
-\end{itemize}
 
 \input{sections/procedure}
 \input{sections/occlusion}
 \input{sections/sutures}
 
-\WIPsection{Discussion and Limitations}
+\section*{Discussion}
 The smaller instruments occupied less of the visual field. Suture placement and procedure durations were shorter with 8 mm instruments. Timing difference in the overall procedures can be attributed largely to the manufacturing and in-group consistency of the tools. Tool changes take significantly longer with the 3 mm instruments and are prone to failure. These times are represented in dissection and the gap between procedure stages.
 
 Camera distance and the operative steps performed differed between recordings. The image-area comparison reflects the recorded operative view; it does not establish an isolated effect of diameter. The frame density plot also weights longer recordings more heavily than shorter recordings. Segmentation testing used frames from the same six recordings used for training; P01 was outside those recordings.
 % Editorial: Confirm P01 mask quality and distinguish pooled-frame summaries from case-level estimates.
 
-The standard dVRK provides no force feedback; tissue forces were not measured. The surgeon reported mucosal tearing during grasping at the defect edge in both groups. Dissection used round-tip scissors with 8 mm instruments and a custom robotic elevator, resembling conventional cleft repair instruments, with 3 mm instruments. Despite their larger shafts, the 8 mm micro-tipped forceps and Cichon graspers had smaller jaw end effectors, facilitating knot throws. Their smoother jaw surfaces also appeared to snag the suture less often.
+The standard dVRK provides no force feedback; tissue forces were not measured. The surgeon reported mucosal tearing during grasping at the defect edge in both groups. \verifytext{The 3 mm elevator resembled instruments used in conventional cleft repair.} Despite their larger shafts, the 8 mm micro-tipped forceps and Cichon graspers had smaller jaw end effectors, facilitating knot throws. Their smoother jaw surfaces also appeared to snag the suture less often.
 
 This single-surgeon study was conducted with small and unequal population sizes. Learning effect, procedure order, repair complexity, and stitch counts may explain part of the timing difference between tool sizes.
 
 Camera calibration was unavailable so physical metrics relating to the cavity and defect could not be determined reliably from video alone. Wrist friction varies with pitch and cable tension and as a result robot joint efforts cannot establish tissue force or injury~\cite{ho2024friction}. The use of surgically created palate defects in the porcine models limits extrapolation to infant anatomy, healing, and speech and aesthetic outcomes.
 
-\WIPsubsection{Conclusion}
-\textbf{[something about quality of closure]}. Overall, the findings support feasibility of miniature instruments for transoral robotic surgeries, or other procedures in confined spaces.
+\verifytext{The findings identify a visualization advantage and instrument-handling tradeoffs relevant to robotic surgery in confined spaces. Further assessment of repair completion and closure quality is needed to establish the clinical relevance of these findings.}

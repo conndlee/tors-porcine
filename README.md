@@ -2,7 +2,7 @@
 
 LaTeX manuscript for a **Plastic and Reconstructive Surgery, Ideas & Innovations** submission comparing miniature 3 mm wristed instruments with standard 8 mm instruments in a live porcine model.
 
-The analysis includes seven main recordings (three 3 mm, four 8 mm) from one surgeon, with a mixed-instrument pilot excluded. Visualization and timing results are drafted; repair completion, closure quality, and parts of the methods remain unfinished.
+The analysis includes seven recordings (three 3 mm, four 8 mm) from one surgeon. Visualization and timing results are drafted; repair completion, closure quality, and parts of the methods remain unfinished.
 
 ## Editing the paper
 
@@ -13,9 +13,9 @@ The analysis includes seven main recordings (three 3 mm, four 8 mm) from one sur
 | [sections/surgical_methods.tex](sections/surgical_methods.tex) | Animal care, operative technique, and study groups |
 | [sections/procedure.tex](sections/procedure.tex), [occlusion.tex](sections/occlusion.tex), [sutures.tex](sections/sutures.tex) | Measurements, results, and figures |
 | [authors.tex](authors.tex), [references.bib](references.bib) | Authors and references |
-| [sections/suture_details.tex](sections/suture_details.tex), [sections/tables/](sections/tables/) | Draft supplement and eight editable tables |
+| [sections/suture_details.tex](sections/suture_details.tex), [sections/tables/](sections/tables/) | Archived analysis tables, excluded from the paper |
 
-Bold bracketed fields mark missing information. The supplement and separate figure-legend section are currently commented out in `main.tex`; enable the supplement to resolve its table and section references in the PDF. Tables are edited directly in LaTeX, without automatic CSV import.
+Bold bracketed fields mark details awaiting study records. Title-page word counts are draft estimates including placeholders. The paper contains four figures and no tables or supplementary analysis. Archived tables remain separate from the manuscript.
 
 Citations use IEEE style (`\cite`). Use `\cref` or `\Cref` for linked figure and table references. The custom class is an unofficial drafting aid: `journalpreview` gives a two-column preview; `submission` gives manuscript formatting.
 
@@ -55,7 +55,7 @@ The four main figures are:
 
 Result figures in [figures/results/](figures/results/) are copied from the analysis repository, `/home/connor/tors-data-anal`; this manuscript builds independently of it. CSV snapshots are in [data/occlusion/](data/occlusion/) and [data/sutures/](data/sutures/). Dated SHA-256 manifests in [data/](data/) record provenance; the latest figure refresh is [2026-10-23](data/figure_sources_2026-10-23.sha256).
 
-Use the fixed P01–P07 IDs and separate Pilot label from [CASE_LABELS.md](CASE_LABELS.md). Suture placement time starts at **needle pickup** and ends at final throw tightening; the subsequent interval ends at cutting, not thread removal. Repair-region annotations do not distinguish nasal and oral closure layers.
+Use the fixed P01–P07 IDs from [CASE_LABELS.md](CASE_LABELS.md). Suture placement time starts at **needle pickup** and ends at final throw tightening; the subsequent interval ends at cutting, not thread removal. Repair-region annotations do not distinguish nasal and oral closure layers.
 
 ## Repository submission guidelines
 
@@ -69,12 +69,12 @@ These are the repository’s recorded targets; verify the journal’s current su
 | References | No limit recorded |
 | Supplemental Digital Content | 8 items; at most 5 videos, 20 minutes total, each under 5 minutes |
 
-Present **what** the innovation is, then discuss **why** it matters. Remove drafting subheadings/subsections for submission. Supplement packaging remains undecided; recount words after completing the missing content.
+The body has an innovation presentation and Discussion, without subsections. Supplementary analysis is excluded. Recount words after completing the missing content.
 
 ## Remaining work
 
 - Complete animal-care approval, animal characteristics, anaesthesia, operative details, allocation/order, annotation methods, and synchronization.
-- Reconcile the seven recordings and excluded pilot with the original [four-animals-per-group premise](temp/premise.md) and animal log.
-- Add repair-completion and closure-quality outcomes, funding, disclosures, and final word counts.
+- Verify animal-to-recording correspondence, allocation, procedure order, and operator experience against the study records.
+- Verify completion, conversions, tool failures, dropped needles, and closure quality from operative records; add confirmed outcomes, funding, disclosures, prior presentation, and corresponding-author details.
 - Review P01 mask quality and the final knot-to-cut exclusion, P03’s repeated repair block, and P07’s duplicate needle-through annotation.
-- Finish the overview photographs and submission formatting. Comparisons remain descriptive; camera position, operative differences, and the small single-surgeon sample limit interpretation.
+- Finish the overview photographs and final word counts. Comparisons remain descriptive; camera position, operative differences, and the small single-surgeon sample limit interpretation.

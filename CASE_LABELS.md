@@ -11,7 +11,6 @@ Use these fixed IDs in the manuscript, figures, and tables. Full recording keys 
 | P05 | 2026-08-19 | 8 mm |
 | P06 | 2026-10-07 | 8 mm |
 | P07 | 2026-10-08 | 8 mm |
-| Pilot | 2026-05-28 | Mixed; excluded from the main comparison |
 
 P01–P07 follow chronological main-case order. Keep the IDs fixed when filtering or reordering data; match recordings using the CSV keys, not row position. Retain original source filenames.
 
