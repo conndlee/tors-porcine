@@ -1,15 +1,19 @@
-# Author affiliations
+# Authors and affiliations
 
-Checked online on October 22, 2026. Author order and requested affiliations follow the author's supplied list. Edit the manuscript metadata directly in [authors.tex](authors.tex).
+The author order and affiliation assignments below match [authors.tex](authors.tex), where manuscript changes should be made.
 
-| Author | Assigned affiliations | Verification |
-| --- | --- | --- |
-| Connor D. Lee | PCIGITI; Mechanical and Industrial Engineering, University of Toronto | Supplied by the user. No independently matching institutional profile was located. |
-| Fiona Mero | PCIGITI; Biomedical Engineering, University of Waterloo | Supplied by the user; her [public professional profile](https://ca.linkedin.com/in/fiona-mero) identifies Biomedical Engineering at Waterloo and a SickKids research placement. |
-| Thomas Looi | PCIGITI; Mechanical and Industrial Engineering, University of Toronto | His [U of T faculty profile](https://otolaryngology.utoronto.ca/faculty/thomas-looi) explicitly lists MIE as his primary appointment. |
-| Dale Podolsky | PCIGITI; Mechanical and Industrial Engineering, University of Toronto; Division of Plastic and Reconstructive Surgery, SickKids | MIE and PCIGITI assignments follow the user's instructions. His [SickKids directory entry](https://www.sickkids.ca/en/staff/p/dale-podolsky/) and [U of T surgical faculty profile](https://www.uoftplasticsurgery.ca/directory/faculty/podolsky-dale/) verify his surgical role; the latter explicitly names the SickKids division. |
+| Author | Affiliations |
+| --- | --- |
+| Connor D. Lee | 1, 2 |
+| Fiona Mero | 1, 3 |
+| Thomas Looi | 1, 2 |
+| Dale Podolsky | 1, 2, 4 |
 
-- The shared centre affiliation for all four authors was supplied by the user. The expanded institutional name is supported by [SickKids](https://www.sickkids.ca/en/news/archive/2021/developing-micro-robots-for-the-future-of-neurosurgery/) and the [centre's website](https://pcigiti.com/).
-- Waterloo's [program assessment](https://uwaterloo.ca/academic-quality-enhancement/sites/default/files/uploads/documents/systems-design-and-biomedical-engineering-basc-far-jan.2023.pdf) identifies Biomedical Engineering as a program delivered by the Department of Systems Design Engineering. The affiliation uses that wording rather than inventing a Department of Biomedical Engineering.
-- Dale's University of Toronto affiliation is already included through MIE as requested. His separate surgical affiliation names the SickKids division verified in the faculty profile.
-- Degrees are omitted pending author preference. Corresponding-author designation and contact details remain to be filled in; no author has been selected automatically.
+1. The Wilfred and Joyce Posluns Centre for Image-Guided Innovation and Therapeutic Intervention, The Hospital for Sick Children, Toronto, Ontario, Canada.
+2. Department of Mechanical and Industrial Engineering, University of Toronto, Toronto, Ontario, Canada.
+3. Biomedical Engineering, Department of Systems Design Engineering, University of Waterloo, Waterloo, Ontario, Canada.
+4. Division of Plastic and Reconstructive Surgery, The Hospital for Sick Children, Toronto, Ontario, Canada.
+
+Corresponding-author details and degrees remain to be finalized.
+
+Institutional profiles: [centre](https://pcigiti.com/), [Thomas Looi](https://otolaryngology.utoronto.ca/faculty/thomas-looi), [Dale Podolsky](https://www.uoftplasticsurgery.ca/directory/faculty/podolsky-dale/). These profiles do not establish every affiliation listed above.
