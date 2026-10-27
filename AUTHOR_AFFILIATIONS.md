@@ -6,6 +6,7 @@ The author order and affiliation assignments below match [authors.tex](authors.t
 | --- | --- |
 | Connor D. Lee | 1, 2 |
 | Fiona Mero | 1, 3 |
+| Dante Pereira | 1, 2 |
 | Thomas Looi | 1, 2 |
 | Dale Podolsky | 1, 2, 4 |
 
