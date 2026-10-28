@@ -1,6 +1,6 @@
 % Current source snapshots: data/occlusion/summary_by_{system,segment}.csv.
-Visual field obstruction was defined as the percentage of the left endoscopic image occupied by instruments. Training masks were created using click-assisted segmentation with Segment Anything Model 2 (SAM 2), a deep learning model~\cite{ravi2024sam2}. These masks were used to train an instrument segmentation model that generated masks across the recordings. Instrument masks included the shafts, wrists, and jaws. Images were sampled at one frame per second.
-The median of the recording medians was 10.39\% with 3-mm instruments and 23.93\% with 8-mm instruments. Frame distributions are shown in \cref{fig:occlusion}.
+Visual field obstruction was defined as the percentage of the left endoscopic image occupied by instruments. Training masks were created using Segment Anything Model 2 (SAM 2), a deep learning model~\cite{ravi2024sam2}. These masks were used to train an instrument segmentation model that generated masks across the recordings. Instrument masks included the shafts, wrists, and jaws. Images were sampled at one frame per second.
+The median of the recording medians was 10.39\% with 3 mm instruments and 23.93\% with 8 mm instruments. Frame distributions are shown in \cref{fig:occlusion}.
 
 \begin{figure}[tbp]
 \centering
