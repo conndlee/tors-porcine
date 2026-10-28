@@ -53,7 +53,9 @@ The four main figures are:
 3. Visual field obstruction distributions and masked examples.
 4. Combined suturing times and knot throws.
 
-Result figures in [figures/results/](figures/results/) are copied from the analysis repository, `/home/connor/tors-data-anal`; this manuscript builds independently of it. CSV snapshots are in [data/occlusion/](data/occlusion/) and [data/sutures/](data/sutures/). Dated SHA-256 manifests in [data/](data/) record provenance; the latest figure refresh is [2026-10-23](data/figure_sources_2026-10-23.sha256).
+Result figures in [figures/results/](figures/results/) are copied from the analysis repository, `/home/connor/tors-data-anal`; this manuscript builds independently of it. CSV snapshots are in [data/occlusion/](data/occlusion/) and [data/sutures/](data/sutures/). Dated SHA-256 manifests in [data/](data/) record provenance; the latest figure refresh is [2026-10-28](data/figure_sources_2026-10-28.sha256).
+
+Refresh snapshots and derived summaries with `python scripts/refresh_analysis.py --snapshot-date YYYY-MM-DD`. Procedure-level times use mean ± SD across cases; obstruction and pooled suture-phase summaries retain medians. Source hashes are recorded in the dated manifests.
 
 Use the fixed P01–P07 IDs from [CASE_LABELS.md](CASE_LABELS.md). Suture placement time starts at **needle pickup** and ends at final throw tightening; the subsequent interval ends at cutting, not thread removal. Repair-region annotations do not distinguish nasal and oral closure layers.
 

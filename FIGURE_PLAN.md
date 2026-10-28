@@ -11,7 +11,7 @@ The current manuscript has four figures:
 
 Figure 1 still needs study photographs; see [photo requirements](figures/overview/README.md). Its views illustrate representative stages rather than a fixed operative sequence.
 
-Figures 2–4 use exports in [figures/results/](figures/results/). Figure 4 uses `suture_combined.pdf`; the separate phase, knot, and stitch-overview PDFs are retained as working assets. Latest import hashes: [figure manifest](data/figure_sources_2026-10-23.sha256).
+Figures 2–4 use exports in [figures/results/](figures/results/). Figure 4 uses `suture_combined.pdf`; the separate phase, knot, and stitch-overview PDFs are retained as working assets. Latest import hashes: [figure manifest](data/figure_sources_2026-10-28.sha256).
 
 The eight analysis tables in [sections/tables/](sections/tables/) are working files and are excluded from the paper. The manuscript has no supplementary-analysis links.
 
