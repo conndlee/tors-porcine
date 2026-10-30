@@ -21,9 +21,12 @@
 \RequirePackage{caption}
 \RequirePackage{fancyhdr}
 \RequirePackage{xcolor}
+\definecolor{PRSHeading}{HTML}{8B188F}
+\definecolor{PRSLink}{HTML}{4D9BC8}
 \RequirePackage{lineno}
 \RequirePackage{url}
-\RequirePackage[hidelinks]{hyperref}
+\RequirePackage[colorlinks=true,linkcolor=PRSLink,citecolor=PRSLink,urlcolor=PRSLink]{hyperref}
+\urlstyle{same}
 \RequirePackage{xparse}
 \ifprs@preview
   \geometry{margin=.72in,columnsep=.26in}
@@ -37,8 +40,8 @@
   \setlength{\parskip}{0pt}
   \captionsetup{font=footnotesize,labelfont=bf,labelsep=period}
   \renewcommand\thesection{}\renewcommand\thesubsection{}
-  \renewcommand\section{\@startsection{section}{1}{\z@}{1.3ex plus .4ex}{.55ex}{\normalfont\normalsize\bfseries}}
-  \renewcommand\subsection{\@startsection{subsection}{2}{\z@}{1.1ex plus .2ex}{.3ex}{\normalfont\small\bfseries\itshape}}
+  \renewcommand\section{\@startsection{section}{1}{\z@}{1.8ex plus .4ex}{.7ex}{\normalfont\normalsize\bfseries\centering\color{PRSHeading}}}
+  \renewcommand\subsection{\@startsection{subsection}{2}{\z@}{1.1ex plus .2ex}{.3ex}{\normalfont\small\bfseries}}
   \pagestyle{fancy}\fancyhf{}\fancyhead[L]{\footnotesize PLASTIC AND RECONSTRUCTIVE SURGERY}\fancyhead[R]{\footnotesize Manuscript Preview}\fancyfoot[C]{\thepage}
   \setlength{\headheight}{15pt}
 \else
@@ -66,8 +69,8 @@
 % In preview mode, title and abstract are emitted together by \PRSstartbody
 % as full-width material above the first page's two columns.
 \newcommand\prs@previewtitle{%
- \begin{center}{\LARGE\bfseries\prs@title\par}\vspace{.75em}
- {\normalsize\prs@authors\par}\end{center}\vspace{.6em}}
+ \begingroup\raggedright{\LARGE\prs@title\par}\vspace{.75em}
+ {\normalsize\prs@authors\par}\endgroup\vspace{.6em}}
 \newcommand\PRSmaketitle{%
 \ifprs@preview
  % Deferred until the abstract is available.
@@ -95,7 +98,7 @@
 \ifprs@preview
  \twocolumn[{%
   \prs@previewtitle
-  \par\noindent\textbf{Abstract}\par\smallskip
+  {\centering\bfseries\color{PRSHeading}ABSTRACT\par}\smallskip
   \begingroup\small\prs@abstractbody\par\endgroup\vspace{.7em}%
  }]%
  % An unnumbered footnote keeps the affiliation block at the bottom of the

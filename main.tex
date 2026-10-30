@@ -15,6 +15,8 @@
 \usepackage[backend=biber,style=ieee,sorting=none,
   hyperref=true,doi=true,isbn=false,url=false]{biblatex}
 \addbibresource{references.bib}
+% Colour the complete bracketed citation while preserving IEEE numbering.
+\AtEveryCite{\color{PRSLink}}
 % The class loads hyperref; cleveref follows it so names and numbers link together.
 \usepackage[nameinlink]{cleveref}
 \crefname{figure}{Fig.}{Figs.}
@@ -43,7 +45,7 @@
 \input{sections/draft}
 
 % ----- Statements: replace rather than retaining untrue stock declarations -----
-\section*{Acknowledgments and Declarations}
+\section*{ACKNOWLEDGMENTS AND DECLARATIONS}
 \PRSdisclosure{Acknowledgments}{AI was used as an assistive tool during manuscript preparation for natural language editing and organization. All scientific content, interpretation of findings, verification of references, and final manuscript preparation were performed and reviewed by the authors. The authors accept full responsibility for the manuscript.}
 
 \PRSdisclosure{Funding}{\textbf{[Grant and sponsor roles; or no external funding.]}}
@@ -51,6 +53,6 @@
 \PRSdisclosure{Ethics approval and consent}{\textbf{[Animal care committee name, protocol number, and applicable animal welfare guidelines.]}}
 
 % \clearpage
-\printbibliography[title={References},heading=bibintoc]
+\printbibliography[title={REFERENCES},heading=bibintoc]
 
 \end{document}
