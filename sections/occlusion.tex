@@ -1,12 +1,12 @@
 % Current source snapshots: data/occlusion/summary_by_{system,segment}.csv.
-Visual field obstruction was defined as the percentage of the left endoscopic image occupied by instruments. Training masks were created using Segment Anything Model 2 (SAM 2), a deep learning model~\cite{ravi2024sam2}. These masks were used to train an instrument segmentation model that generated masks across the recordings. Instrument masks included the shafts, wrists, and jaws. Images were sampled at one frame per second.
-The median occlusion in recording was 10.39\% with 3 mm instruments and 23.93\% with 8 mm instruments. Frame distributions are shown in \Cref{fig:occlusion}.
+Visual field obstruction was defined as the percentage of the left endoscopic image occupied by instruments. Training masks were created using Segment Anything Model 2 (SAM2), a deep learning model~\cite{ravi2024sam2}. These masks were used to train an instrument segmentation model that generated masks across the recordings. Instrument masks included the shafts, wrists, and jaws. Images were sampled at one frame per second with results presented in \Cref{fig:occlusion}.
+% The median occlusion in recording was 10.39\% with 3 mm instruments and 23.93\% with 8 mm instruments. Frame distributions are shown in \Cref{fig:occlusion}.
 
 \begin{figure}[tbp]
 \centering
 \includegraphics[width=\linewidth]{figures/results/occlusion_distribution.pdf}\par\smallskip
 \includegraphics[width=.46\linewidth]{figures/results/occlusion_example_3mm.png}\hfill
 \includegraphics[width=.46\linewidth]{figures/results/occlusion_example_8mm.png}
-\caption{Visual field obstruction in the main recordings. Top: Gaussian kernel density curves for frames with at least 1\% obstruction; dashed lines mark medians. Bottom: selected suturing examples with instrument masks.}
+\caption{Visual field obstruction in the main recordings. Top: Gaussian kernel density curves for frames with at least 1\% obstruction; dashed lines mark median occlusion of 10.39\% with 3 mm instruments and 23.93\% with 8 mm instruments. Bottom: selected suturing examples with instrument masks.}
 \label{fig:occlusion}
 \end{figure}
