@@ -21,6 +21,16 @@ Citations use IEEE style (`\cite`). Use `\cref` or `\Cref` for linked figure and
 
 ## Build
 
+Build both the PDF and Word manuscript with Tectonic, Biber, Pandoc, and Poppler installed:
+
+```sh
+./scripts/build.sh
+```
+
+Outputs: `main.pdf` and `pandoc/build/manuscript.docx`. The PDF uses the document mode selected in `main.tex`; Word uses submission formatting. `make all` runs the same build. Tool overrides such as `PANDOC=/path/to/pandoc` can be passed to the script.
+
+The script also finds the existing temporary Tectonic, Biber, and Pandoc tools under `/tmp` when they are absent from PATH. These temporary tools must be replaced by installed dependencies if `/tmp` is cleared.
+
 With a TeX installation including Biber, `biblatex-ieee`, and `cleveref`:
 
 ```sh
@@ -32,6 +42,8 @@ pdflatex main
 
 Alternatively, with Tectonic and compatible Biber installed, run `make preview`. Output: `main.pdf`. `main.pdf` and LaTeX intermediates are ignored by Git.
 
+For an editable Word copy, run `make word`. See [Word export](pandoc/README.md) for dependencies and output details.
+
 <details>
 <summary>Existing local temporary toolchain</summary>
 
@@ -39,7 +51,8 @@ While the tools under `/tmp` remain available:
 
 ```sh
 PATH=/tmp/tors-biber:/tmp/tors-latex/bin:$PATH XDG_CACHE_HOME=/tmp/tors-tex-cache \
-  make preview TECTONIC="tectonic -Z search-path=/tmp/tors-tex-extras/biblatex-ieee-1.3c"
+  ./scripts/build.sh PANDOC=/tmp/pandoc-3.13/bin/pandoc \
+  TECTONIC="tectonic -Z search-path=/tmp/tors-tex-extras/biblatex-ieee-1.3c"
 ```
 
 </details>

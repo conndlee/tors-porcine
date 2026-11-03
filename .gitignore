@@ -43,3 +43,4 @@
 # Local build output directories.
 /build/
 /out/
+/pandoc/build/

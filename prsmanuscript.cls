@@ -56,6 +56,45 @@
   \pagestyle{fancy}\fancyhf{}\fancyfoot[C]{\thepage}\renewcommand\headrulewidth{0pt}
   \setlength{\headheight}{14pt}
 \fi
+% Submission figures share a page-height budget for artwork and caption.
+\newlength{\PRSfiguremaxheight}
+\setlength{\PRSfiguremaxheight}{.95\textheight}
+\newsavebox{\prs@figureart}
+\newsavebox{\prs@figurecaption}
+\newlength{\prs@figureavailable}
+\newlength{\prs@figureartheight}
+\newcommand\prs@figurelabels[1]{%
+ \@for\prs@figurelabel:=#1\do{%
+  \expandafter\label\expandafter{\prs@figurelabel}}}
+% Arguments: artwork, caption, comma-separated labels (including aliases).
+\NewDocumentCommand\PRSfigurecontent{+m +m m}{%
+ \ifprs@preview
+  #1\caption{#2}\prs@figurelabels{#3}%
+ \else
+  \begingroup
+   \centering
+   \setbox\prs@figurecaption=\vbox{%
+    \hsize=\linewidth
+    \caption{#2}\prs@figurelabels{#3}}%
+   \setlength{\prs@figureavailable}{\dimexpr
+    \PRSfiguremaxheight-\ht\prs@figurecaption-\dp\prs@figurecaption\relax}%
+   \ifdim\prs@figureavailable>0pt\else
+    \ClassError{prsmanuscript}{Figure caption exceeds the figure height limit}%
+     {Increase \string\PRSfiguremaxheight\space or shorten the caption.}%
+   \fi
+   \setbox\prs@figureart=\vbox{%
+    \hsize=\linewidth\centering #1\par}%
+   \setlength{\prs@figureartheight}{\dimexpr
+    \ht\prs@figureart+\dp\prs@figureart\relax}%
+   \noindent
+   \ifdim\prs@figureartheight>\prs@figureavailable
+    \resizebox*{!}{\prs@figureavailable}{\usebox{\prs@figureart}}%
+   \else
+    \usebox{\prs@figureart}%
+   \fi
+   \par\nointerlineskip\usebox{\prs@figurecaption}%
+  \endgroup
+ \fi}
 \newcommand\PRStitle[1]{\gdef\prs@title{#1}}
 \newcommand\PRSauthors[1]{\gdef\prs@authors{#1}}
 \newcommand\PRSaffiliations[1]{\gdef\prs@affiliations{#1}}

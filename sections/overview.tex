@@ -2,8 +2,10 @@
 % Keep each image's case ID, video timestamp and instrument group in its source notes.
 % Suture-start annotations mark needle pickup.
 \begin{figure*}[t]
+\PRSfigurecontent{%
 \centering
 \begingroup
+\linespread{1}\selectfont
 % Target photo aspect ratio: width:height = 12:13 (960 x 1040 source frames).
 \newlength{\overviewphotowidth}
 \setlength{\overviewphotowidth}{.18\linewidth}
@@ -12,7 +14,7 @@
 % Arguments: card width, visible stage label, image path, photo-selection note.
 % The fourth argument documents the intended image without adding a second caption.
 \newcommand{\overviewstage}[4]{%
- \begin{minipage}[c]{#1}\centering
+ \begin{minipage}[t]{#1}\centering
   \setlength{\overviewimagewidth}{\overviewphotowidth}%
   \ifdim\overviewimagewidth>\linewidth
    \setlength{\overviewimagewidth}{\linewidth}%
@@ -25,7 +27,7 @@
     \includegraphics[width=\overviewimagewidth,height=\overviewimageheight]{example-image-duck-portrait}%
    }%
   }\par\vspace{2pt}%
-  \parbox[c][.28in][c]{\linewidth}{\centering\small\bfseries #2}%
+  \parbox[t]{\linewidth}{\centering\small\bfseries #2\strut}%
  \end{minipage}}
 
 \makebox[\linewidth][l]{\textbf{A. Recorded procedure}}\par\smallskip
@@ -47,9 +49,8 @@
 \hspace{1pt}\raisebox{12pt}{\textcolor{gray}{$\rightarrow$}}\hspace{1pt}%
 \overviewstage{.18\linewidth}{Last throw tightened}{figures/images/tighten.png}{Knot tightening}%
 \hspace{1pt}\raisebox{12pt}{\textcolor{gray}{$\rightarrow$}}\hspace{1pt}%
-\overviewstage{.18\linewidth}{Suture cutting and\\thread removal}{figures/images/cut.png}{Assistant cutting and removal}%
+\overviewstage{.18\linewidth}{Thread cutting\\and removal}{figures/images/cut.png}{Assistant cutting and removal}%
 % Timing endpoints: needle pickup, final throw tightening, and suture cutting.
 \endgroup
-\caption{Procedure overview. (A) Representative dissection, repair, and closure stages. (B) Suturing events. Suture placement time runs from needle pickup to final throw tightening; the subsequent interval ends at suture cutting. Thread removal is shown for context.}
-\label{fig:workflow}
+}{Procedure overview. (A) Representative dissection, repair, and closure stages. (B) Suturing events. Suture placement time runs from needle pickup to final throw tightening; the subsequent interval ends at suture cutting. Thread removal is shown for context.}{fig:workflow}
 \end{figure*}
